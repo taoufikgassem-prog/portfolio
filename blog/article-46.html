@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Update Sets : gérer les déploiements dans ServiceNow | Blog Taoufik Gassem</title>
+<meta name="description" content="Comment utiliser les Update Sets pour gérer proprement les déploiements de configuration dans ServiceNow.">
+<link rel="canonical" href="https://taoufikgassem.arena.site/blog/update-sets-servicenow.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Update Sets : gérer les déploiements dans ServiceNow">
+<meta property="og:description" content="Comment utiliser les Update Sets pour gérer proprement les déploiements de configuration dans ServiceNow.">
+<meta property="og:image" content="https://taoufikgassem.arena.site/assets/images/taoufik-gassem-technical-project-manager.webp">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/responsive.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","headline":"Update Sets : gérer les déploiements dans ServiceNow","datePublished":"2025-11-19","dateModified":"2025-11-19","author":{"@type":"Person","name":"Taoufik GASSEM"},"image":"https://taoufikgassem.arena.site/assets/images/taoufik-gassem-technical-project-manager.webp","mainEntityOfPage":"https://taoufikgassem.arena.site/blog/update-sets-servicenow.html"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://taoufikgassem.arena.site/index.html"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://taoufikgassem.arena.site/blog.html"},{"@type":"ListItem","position":3,"name":"Update Sets","item":"https://taoufikgassem.arena.site/blog/update-sets-servicenow.html"}]}
+</script>
+</head>
+<body data-page="blog">
+<a class="skip-link" href="#main-content">Aller au contenu principal</a>
+<div class="nav-backdrop"></div>
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="../index.html" class="logo" aria-label="Taoufik Gassem - Accueil"><span class="logo-mark" aria-hidden="true">TG</span><span class="logo-full">Taoufik GASSEM</span></a>
+    <nav class="main-nav" id="main-nav" aria-label="Navigation principale">
+      <ul>
+        <li><a href="../index.html">Accueil</a></li><li><a href="../about.html">À propos</a></li><li><a href="../experience.html">Expérience</a></li>
+        <li><a href="../expertise.html">Expertises</a></li><li><a href="../projects.html">Projets</a></li><li><a href="../certifications.html">Certifications</a></li>
+        <li><a href="../blog.html" aria-current="page">Blog</a></li><li><a href="../contact.html">Contact</a></li>
+      </ul>
+      <a href="../contact.html" class="btn btn-primary btn-block nav-cta-mobile">Me contacter</a>
+    </nav>
+    <div class="header-actions">
+      <a href="../contact.html" class="btn btn-primary btn-nav-cta">Me contacter</a>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="main-nav" aria-label="Ouvrir le menu de navigation"><span class="nav-toggle-icon"></span></button>
+    </div>
+  </div>
+</header>
+<div class="reading-progress"></div>
+<main id="main-content">
+  <section class="article-header">
+    <div class="container">
+      <ol class="breadcrumbs"><li><a href="../index.html">Accueil</a></li><li><a href="../blog.html">Blog</a></li><li>Update Sets</li></ol>
+      <span class="tag">ServiceNow</span>
+      <h1>Update Sets : gérer les déploiements dans ServiceNow</h1>
+      <div class="article-title-meta"><span>Par Taoufik Gassem</span><span>Publié le 19 novembre 2025</span><span>Mis à jour le 19 novembre 2025</span><span>8 min de lecture</span></div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container article-layout">
+      <nav class="article-toc" aria-label="Sommaire de l'article">
+        <h2>Sommaire</h2>
+        <ol>
+          <li><a href="#quest-ce-us">Qu'est-ce qu'un Update Set</a></li>
+          <li><a href="#cycle-vie-us">Le cycle de vie d'un Update Set</a></li>
+          <li><a href="#pieges-us">Pièges classiques à éviter</a></li>
+          <li><a href="#bonnes-pratiques-us">Bonnes pratiques de gestion</a></li>
+          <li><a href="#checklist">Checklist Update Sets</a></li>
+          <li><a href="#conclusion">Conclusion</a></li>
+        </ol>
+      </nav>
+      <article class="article-body">
+        <p>Les Update Sets sont le mécanisme standard de ServiceNow pour transporter des modifications de configuration entre différentes instances (développement, test, production). Une gestion rigoureuse des Update Sets est indispensable pour des déploiements fiables.</p>
+
+        <h2 id="quest-ce-us">Qu'est-ce qu'un Update Set</h2>
+        <p>Un Update Set regroupe l'ensemble des modifications de configuration (scripts, formulaires, règles) réalisées pendant une session de travail, afin de pouvoir les exporter et les importer sur une autre instance, généralement dans le cadre d'un processus de développement, test puis mise en production.</p>
+
+        <h2 id="cycle-vie-us">Le cycle de vie d'un Update Set</h2>
+        <p>Un Update Set est généralement créé en début de développement, complété au fur et à mesure des modifications, puis marqué comme complet avant son export. Sur l'instance cible, il est importé puis appliqué (committed) après vérification de son contenu.</p>
+
+        <h2 id="pieges-us">Pièges classiques à éviter</h2>
+        <p>Un piège fréquent consiste à travailler sur plusieurs sujets simultanément dans un même Update Set, rendant difficile un déploiement partiel ou une revue claire des modifications. Un autre piège concerne les dépendances entre composants, qui doivent être incluses dans le même Update Set pour éviter des erreurs de configuration incomplète sur l'instance cible.</p>
+        <h3>Le cas des Update Sets qui se chevauchent</h3>
+        <p>Lorsque plusieurs Update Sets modifient les mêmes composants dans un ordre différent de celui prévu, des conflits peuvent apparaître lors de l'application sur l'instance cible. Une coordination claire entre contributeurs limite ce risque, en particulier sur des instances partagées par plusieurs développeurs.</p>
+
+        <h2 id="bonnes-pratiques-us">Bonnes pratiques de gestion</h2>
+        <p>Il est recommandé de créer un Update Set dédié par sujet fonctionnel, de nommer clairement chaque Update Set selon son contenu, et de documenter les dépendances éventuelles avec d'autres Update Sets avant tout déploiement en production.</p>
+
+        <h2 id="checklist">Checklist de gestion des Update Sets</h2>
+        <ul class="article-checklist">
+          <li>Chaque Update Set correspond à un sujet fonctionnel cohérent et clairement nommé.</li>
+          <li>Le contenu de l'Update Set est vérifié avant son export vers l'instance cible.</li>
+          <li>Les dépendances entre composants sont identifiées et documentées.</li>
+          <li>L'application de l'Update Set en production est précédée d'un test sur une instance intermédiaire.</li>
+        </ul>
+
+        <blockquote>Un Update Set mal délimité rend le déploiement imprévisible : ce qui est facile à corriger en développement devient risqué en production.</blockquote>
+
+        <h2 id="conclusion">Conclusion</h2>
+        <p>Les Update Sets sont un mécanisme puissant mais exigeant en discipline pour gérer les déploiements de configuration dans ServiceNow. Une organisation rigoureuse, sujet par sujet, limite considérablement les risques lors des mises en production.</p>
+
+        <div class="article-cta"><p><strong>Vous structurez un processus de déploiement ServiceNow ?</strong> <a href="../contact.html">Échangeons</a>.</p></div>
+
+        <div class="article-share">
+          <button class="btn btn-outline btn-sm" data-copy-link>Copier le lien de l'article</button>
+          <a class="btn btn-outline btn-sm" href="https://www.linkedin.com/sharing/share-offsite/?url=https://taoufikgassem.arena.site/blog/update-sets-servicenow.html" target="_blank" rel="noopener noreferrer">Partager sur LinkedIn</a>
+        </div>
+
+        <nav class="article-nav" aria-label="Navigation entre articles">
+          <a href="article-45.html"><span class="nav-label">Article précédent</span>Rapports et tableaux de bord dans ServiceNow</a>
+          <a href="article-47.html" class="next"><span class="nav-label">Article suivant</span>Qualité des données CMDB dans ServiceNow</a>
+        </nav>
+
+        <div class="related-articles">
+          <h2>Articles liés</h2>
+          <div class="grid grid-3">
+            <div class="card"><h3><a href="article-50.html">Bonnes pratiques pour administrer une instance ServiceNow personnelle</a></h3></div>
+            <div class="card"><h3><a href="article-37.html">Business Rules dans ServiceNow</a></h3></div>
+            <div class="card"><h3><a href="article-47.html">Qualité des données CMDB dans ServiceNow</a></h3></div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><h3>Taoufik GASSEM</h3><p>Technical Project Manager - Embedded Systems.</p><p><a href="https://www.linkedin.com/in/taoufik-g-387964129/" target="_blank" rel="noopener noreferrer">LinkedIn →</a></p></div>
+      <div class="footer-col"><h4>Navigation</h4><ul><li><a href="../index.html">Accueil</a></li><li><a href="../about.html">À propos</a></li><li><a href="../experience.html">Expérience</a></li></ul></div>
+      <div class="footer-col"><h4>Ressources</h4><ul><li><a href="../blog.html">Blog</a></li><li><a href="../contact.html">Contact</a></li><li><a href="../privacy.html">Confidentialité</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© <span data-current-year></span> Taoufik GASSEM — Tous droits réservés.</span><span>Technical Project Manager - Embedded Systems</span></div>
+  </div>
+</footer>
+<button class="back-to-top" aria-label="Retour en haut de page">↑</button>
+<script src="../js/main.js" defer></script>
+</body>
+</html>

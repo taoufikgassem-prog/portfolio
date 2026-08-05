@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Business Rules dans ServiceNow : principes et bonnes pratiques | Blog Taoufik Gassem</title>
+<meta name="description" content="Comprendre le fonctionnement des Business Rules dans ServiceNow et les bonnes pratiques pour les utiliser efficacement.">
+<link rel="canonical" href="https://taoufikgassem.arena.site/blog/business-rules-servicenow.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Business Rules dans ServiceNow : principes et bonnes pratiques">
+<meta property="og:description" content="Comprendre le fonctionnement des Business Rules dans ServiceNow et les bonnes pratiques pour les utiliser efficacement.">
+<meta property="og:image" content="https://taoufikgassem.arena.site/assets/images/taoufik-gassem-technical-project-manager.webp">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/responsive.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","headline":"Business Rules dans ServiceNow : principes et bonnes pratiques","datePublished":"2025-09-17","dateModified":"2025-09-17","author":{"@type":"Person","name":"Taoufik GASSEM"},"image":"https://taoufikgassem.arena.site/assets/images/taoufik-gassem-technical-project-manager.webp","mainEntityOfPage":"https://taoufikgassem.arena.site/blog/business-rules-servicenow.html"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://taoufikgassem.arena.site/index.html"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://taoufikgassem.arena.site/blog.html"},{"@type":"ListItem","position":3,"name":"Business Rules","item":"https://taoufikgassem.arena.site/blog/business-rules-servicenow.html"}]}
+</script>
+</head>
+<body data-page="blog">
+<a class="skip-link" href="#main-content">Aller au contenu principal</a>
+<div class="nav-backdrop"></div>
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="../index.html" class="logo" aria-label="Taoufik Gassem - Accueil"><span class="logo-mark" aria-hidden="true">TG</span><span class="logo-full">Taoufik GASSEM</span></a>
+    <nav class="main-nav" id="main-nav" aria-label="Navigation principale">
+      <ul>
+        <li><a href="../index.html">Accueil</a></li><li><a href="../about.html">À propos</a></li><li><a href="../experience.html">Expérience</a></li>
+        <li><a href="../expertise.html">Expertises</a></li><li><a href="../projects.html">Projets</a></li><li><a href="../certifications.html">Certifications</a></li>
+        <li><a href="../blog.html" aria-current="page">Blog</a></li><li><a href="../contact.html">Contact</a></li>
+      </ul>
+      <a href="../contact.html" class="btn btn-primary btn-block nav-cta-mobile">Me contacter</a>
+    </nav>
+    <div class="header-actions">
+      <a href="../contact.html" class="btn btn-primary btn-nav-cta">Me contacter</a>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="main-nav" aria-label="Ouvrir le menu de navigation"><span class="nav-toggle-icon"></span></button>
+    </div>
+  </div>
+</header>
+<div class="reading-progress"></div>
+<main id="main-content">
+  <section class="article-header">
+    <div class="container">
+      <ol class="breadcrumbs"><li><a href="../index.html">Accueil</a></li><li><a href="../blog.html">Blog</a></li><li>Business Rules</li></ol>
+      <span class="tag">ServiceNow</span>
+      <h1>Business Rules dans ServiceNow : principes et bonnes pratiques</h1>
+      <div class="article-title-meta"><span>Par Taoufik Gassem</span><span>Publié le 17 septembre 2025</span><span>Mis à jour le 17 septembre 2025</span><span>8 min de lecture</span></div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container article-layout">
+      <nav class="article-toc" aria-label="Sommaire de l'article">
+        <h2>Sommaire</h2>
+        <ol>
+          <li><a href="#quest-ce-br">Qu'est-ce qu'une Business Rule</a></li>
+          <li><a href="#moments-execution">Les moments d'exécution</a></li>
+          <li><a href="#bonnes-pratiques-br">Bonnes pratiques d'écriture</a></li>
+          <li><a href="#perf-br">Impact sur la performance</a></li>
+          <li><a href="#checklist">Checklist Business Rules</a></li>
+          <li><a href="#conclusion">Conclusion</a></li>
+        </ol>
+      </nav>
+      <article class="article-body">
+        <p>Les Business Rules sont l'un des mécanismes de scripting serveur les plus utilisés dans ServiceNow pour automatiser des comportements lors de la manipulation des enregistrements. Bien utilisées, elles apportent une automatisation puissante ; mal maîtrisées, elles peuvent dégrader la performance et la lisibilité de la configuration.</p>
+
+        <h2 id="quest-ce-br">Qu'est-ce qu'une Business Rule</h2>
+        <p>Une Business Rule est un script serveur qui s'exécute automatiquement lors d'une opération sur un enregistrement : insertion, mise à jour, suppression ou requête. Elle permet par exemple de calculer automatiquement un champ, de valider une donnée avant enregistrement, ou de déclencher une action complémentaire.</p>
+
+        <h2 id="moments-execution">Les moments d'exécution</h2>
+        <p>ServiceNow permet de définir à quel moment une Business Rule s'exécute par rapport à l'opération déclenchante : avant (before), après (after), autour (around) ou de façon asynchrone (async). Le choix du bon moment d'exécution est déterminant pour le comportement attendu et pour la performance globale.</p>
+        <h3>Avant, après ou asynchrone : bien choisir</h3>
+        <p>Une règle "before" permet de modifier des données avant leur enregistrement effectif, sans opération supplémentaire en base. Une règle "after" s'exécute une fois l'enregistrement sauvegardé, utile pour des actions dépendant de l'état final. Une règle asynchrone diffère l'exécution pour ne pas ralentir l'action de l'utilisateur, au prix d'un délai de traitement.</p>
+
+        <h2 id="bonnes-pratiques-br">Bonnes pratiques d'écriture</h2>
+        <p>Une Business Rule doit rester ciblée sur une responsabilité claire, avec des conditions d'exécution précises pour éviter qu'elle ne s'exécute inutilement sur des enregistrements non concernés. Documenter l'objectif de chaque règle facilite grandement la maintenance future de la configuration.</p>
+
+        <h2 id="perf-br">Impact sur la performance</h2>
+        <p>Un nombre excessif de Business Rules, ou des règles mal optimisées (requêtes non nécessaires, boucles coûteuses), peut dégrader sensiblement la performance de la plateforme, en particulier sur des tables à fort volume. L'analyse de cet impact rejoint les sujets abordés dans l'article <a href="article-48.html">Analyser la performance d'une instance ServiceNow</a>.</p>
+
+        <h2 id="checklist">Checklist Business Rules</h2>
+        <ul class="article-checklist">
+          <li>Chaque Business Rule a une responsabilité claire et documentée.</li>
+          <li>Les conditions d'exécution limitent la règle aux enregistrements réellement concernés.</li>
+          <li>Le moment d'exécution (before, after, async) est choisi en fonction du besoin réel.</li>
+          <li>L'impact potentiel sur la performance est évalué, en particulier sur des tables à fort volume.</li>
+        </ul>
+
+        <blockquote>Une Business Rule mal ciblée peut passer inaperçue longtemps, jusqu'à ce que le volume de données révèle son coût réel.</blockquote>
+
+        <h2 id="conclusion">Conclusion</h2>
+        <p>Les Business Rules sont un outil puissant d'automatisation dans ServiceNow, à condition d'être écrites avec discipline : responsabilité claire, conditions précises et attention portée à la performance. Cette rigueur évite l'accumulation de scripts difficiles à maintenir dans la durée.</p>
+
+        <div class="article-cta"><p><strong>Vous développez des automatisations serveur dans ServiceNow ?</strong> <a href="../contact.html">Échangeons</a>.</p></div>
+
+        <div class="article-share">
+          <button class="btn btn-outline btn-sm" data-copy-link>Copier le lien de l'article</button>
+          <a class="btn btn-outline btn-sm" href="https://www.linkedin.com/sharing/share-offsite/?url=https://taoufikgassem.arena.site/blog/business-rules-servicenow.html" target="_blank" rel="noopener noreferrer">Partager sur LinkedIn</a>
+        </div>
+
+        <nav class="article-nav" aria-label="Navigation entre articles">
+          <a href="article-36.html"><span class="nav-label">Article précédent</span>Notifications et règles d'affectation dans ServiceNow</a>
+          <a href="article-38.html" class="next"><span class="nav-label">Article suivant</span>Client Scripts et UI Policies dans ServiceNow</a>
+        </nav>
+
+        <div class="related-articles">
+          <h2>Articles liés</h2>
+          <div class="grid grid-3">
+            <div class="card"><h3><a href="article-39.html">Script Includes dans ServiceNow</a></h3></div>
+            <div class="card"><h3><a href="article-42.html">Comprendre les ACL dans ServiceNow</a></h3></div>
+            <div class="card"><h3><a href="article-48.html">Analyser la performance d'une instance ServiceNow</a></h3></div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><h3>Taoufik GASSEM</h3><p>Technical Project Manager - Embedded Systems.</p><p><a href="https://www.linkedin.com/in/taoufik-g-387964129/" target="_blank" rel="noopener noreferrer">LinkedIn →</a></p></div>
+      <div class="footer-col"><h4>Navigation</h4><ul><li><a href="../index.html">Accueil</a></li><li><a href="../about.html">À propos</a></li><li><a href="../experience.html">Expérience</a></li></ul></div>
+      <div class="footer-col"><h4>Ressources</h4><ul><li><a href="../blog.html">Blog</a></li><li><a href="../contact.html">Contact</a></li><li><a href="../privacy.html">Confidentialité</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© <span data-current-year></span> Taoufik GASSEM — Tous droits réservés.</span><span>Technical Project Manager - Embedded Systems</span></div>
+  </div>
+</footer>
+<button class="back-to-top" aria-label="Retour en haut de page">↑</button>
+<script src="../js/main.js" defer></script>
+</body>
+</html>

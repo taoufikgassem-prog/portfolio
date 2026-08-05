@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog | Management de projets, systèmes embarqués et validation</title>
+<meta name="description" content="Articles de Taoufik Gassem sur le pilotage de projets techniques, l'ingénierie système, la validation automobile et l'automatisation des tests.">
+<link rel="canonical" href="https://taoufikgassem.arena.site/blog.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Blog | Management de projets, systèmes embarqués et validation">
+<meta property="og:description" content="Articles de Taoufik Gassem sur le pilotage de projets techniques, l'ingénierie système, la validation automobile et l'automatisation des tests.">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "Blog de Taoufik Gassem",
+  "url": "https://taoufikgassem.arena.site/blog.html",
+  "author": {"@type":"Person","name":"Taoufik GASSEM"}
+}
+</script>
+</head>
+<body data-page="blog">
+<a class="skip-link" href="#main-content">Aller au contenu principal</a>
+<div class="nav-backdrop"></div>
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="logo" aria-label="Taoufik Gassem - Accueil">
+      <span class="logo-mark" aria-hidden="true">TG</span>
+      <span class="logo-full">Taoufik GASSEM</span>
+    </a>
+    <nav class="main-nav" id="main-nav" aria-label="Navigation principale">
+      <ul>
+        <li><a href="index.html" data-nav="home">Accueil</a></li>
+        <li><a href="about.html" data-nav="about">À propos</a></li>
+        <li><a href="experience.html" data-nav="experience">Expérience</a></li>
+        <li><a href="expertise.html" data-nav="expertise">Expertises</a></li>
+        <li><a href="projects.html" data-nav="projects">Projets</a></li>
+        <li><a href="certifications.html" data-nav="certifications">Certifications</a></li>
+        <li><a href="blog.html" data-nav="blog">Blog</a></li>
+        <li><a href="contact.html" data-nav="contact">Contact</a></li>
+      </ul>
+      <a href="contact.html" class="btn btn-primary btn-block nav-cta-mobile">Me contacter</a>
+    </nav>
+    <div class="header-actions">
+      <a href="contact.html" class="btn btn-primary btn-nav-cta">Me contacter</a>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="main-nav" aria-label="Ouvrir le menu de navigation">
+        <span class="nav-toggle-icon"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main-content">
+  <section class="page-header">
+    <div class="container">
+      <span class="eyebrow">Blog</span>
+      <h1>Pilotage de projets, ingénierie et validation</h1>
+      <p class="lead">30 articles pratiques sur la gestion de projet technique, le leadership d'ingénierie, les systèmes embarqués, l'ingénierie système, la validation automobile et l'automatisation des tests.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+
+      <article class="featured-article">
+        <div class="featured-article-media">
+          <div>
+            <span class="pill">Article à la une</span>
+            <h2 style="color:#fff;margin-top:var(--space-3);">Le rôle du Technical Project Manager dans un projet de systèmes embarqués</h2>
+          </div>
+        </div>
+        <div class="featured-article-body">
+          <span class="tag">Gestion de projet technique</span>
+          <p class="article-excerpt" style="margin-top:var(--space-3);">Comment le Technical Project Manager articule exigences, fournisseurs, ingénierie système et jalons projet pour livrer un système embarqué conforme, dans les délais impartis.</p>
+          <div class="article-meta" style="border-top:none;padding-top:0;">
+            <span>8 min de lecture</span><span>Publié le 8 janvier 2025</span>
+          </div>
+          <p style="margin-top:var(--space-4);"><a href="blog/article-01.html" class="btn btn-primary">Lire l'article →</a></p>
+        </div>
+      </article>
+
+      <div class="blog-toolbar">
+        <div class="search-field">
+          <label for="blogSearch" class="visually-hidden">Rechercher un article</label>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg>
+          <input type="search" id="blogSearch" placeholder="Rechercher un article (mot-clé, titre...)">
+        </div>
+        <p id="blogResultsCount" class="visually-hidden" aria-live="polite">30 articles trouvés</p>
+        <ul class="filter-list" role="group" aria-label="Filtrer par catégorie">
+          <li><button class="filter-btn" data-filter="all" aria-pressed="true">Tous</button></li>
+          <li><button class="filter-btn" data-filter="gp" aria-pressed="false">Gestion de projet technique</button></li>
+          <li><button class="filter-btn" data-filter="el" aria-pressed="false">Engineering Leadership</button></li>
+          <li><button class="filter-btn" data-filter="se" aria-pressed="false">Systèmes embarqués</button></li>
+          <li><button class="filter-btn" data-filter="is" aria-pressed="false">Ingénierie système</button></li>
+          <li><button class="filter-btn" data-filter="va" aria-pressed="false">Validation automobile</button></li>
+          <li><button class="filter-btn" data-filter="at" aria-pressed="false">Automatisation des tests</button></li>
+          <li><button class="filter-btn" data-filter="sn" aria-pressed="false">ServiceNow</button></li>
+        </ul>
+      </div>
+
+      <div class="article-grid" id="articleGrid">
+
+        <article class="article-card" data-article-card data-category="gp" data-search="role technical project manager systemes embarques gestion de projet">
+          <span class="tag">Gestion de projet technique</span>
+          <h3><a href="blog/article-01.html">Le rôle du Technical Project Manager dans un projet de systèmes embarqués</a></h3>
+          <p class="article-excerpt">Comprendre le périmètre du TPM entre pilotage projet et ingénierie embarquée.</p>
+          <div class="article-meta"><span>8 min</span><span>08/01/2025</span></div>
+        </article>
+
+        <article class="article-card" data-article-card data-category="se" data-search="pilotage projet ecu integration vehicule systemes embarques">
+          <span class="tag">Systèmes embarqués</span>
+          <h3><a href="blog/article-02.html">Comment piloter un projet ECU de la spécification à l'intégration véhicule</a></h3>
+          <p class="article-excerpt">Les étapes clés du pilotage d'un calculateur automobile, de la spécification à l'intégration.</p>
+          <div class="article-meta"><span>9 min</span><span>15/01/2025</span></div>
+        </article>
+
+        <article class="article-card" data-article-card data-category="gp" data-search="qualite couts delais pilotage performance projet technique">
+          <span class="tag">Gestion de projet technique</span>
+          <h3><a href="blog/article-03.html">Qualité, coûts et délais : piloter la performance d'un projet technique</a></h3>
+          <p class="article-excerpt">Un cadre pratique pour équilibrer qualité, coûts et délais sur un projet d'ingénierie.</p>
+          <div class="article-meta"><span>8 min</span><span>22/01/2025</span></div>
+        </article>
+
+        <article class="article-card" data-article-card data-category="gp" data-search="gouvernance projet ingenierie">
+          <span class="tag">Gestion de projet technique</span>
+          <h3><a href="blog/article-04.html">Comment construire une gouvernance efficace pour un projet d'ingénierie</a></h3>
+          <p class="article-excerpt">Structurer les instances, les rôles et les rituels d'un projet d'ingénierie.</p>
+          <div class="article-meta"><span>8 min</span><span>29/01/2025</span></div>
+        </article>
+
+        <article class="article-card" data-article-card data-category="gp" data-search="kpi projet developpement automobile indicateurs">
+          <span class="tag">Gestion de projet technique</span>
+          <h3><a href="blog/article-05.html">Les KPI essentiels pour suivre un projet de développement automobile</a></h3>
+          <p class="article-excerpt">Les indicateurs qui aident réellement à piloter un projet automobile complexe.</p>
+          <div class="article-meta"><span>7 min</span><span>05/02/2025</span></div>
+        </article>
+
+        <article class="article-card" data-article-card data-category="gp" data-search="pilotage fournisseur calculateur electronique">
+          <span class="tag">Gestion de projet technique</span>
+          <h3><a href="blog/article-06.html">Piloter un fournisseur de calculateur électronique : méthode et points de vigilance</a></h3>
+          <p class="article-excerpt">Méthode pour cadrer, suivre et challenger un fournisseur d'ECU.</p>
+          <div class="article-meta"><span>9 min</span><span>12/02/2025</span></div>
+        </article>
+
+        <article class="article-card" data-article-card data-category="gp" data-search="comite de pilotage technique animation">
+          <span class="tag">Gestion de projet technique</span>
+          <h3><a href="blog/article-07.html">Comment préparer et animer un comité de pilotage technique</a></h3>
+          <p class="article-excerpt">Préparer un comité de pilotage utile, factuel et orienté décision.</p>
+          <div class="article-meta"><span>7 min</span><span>19/02/2025</span></div>
+        </article>
+
+        <article class="article-card" data-article-card data-category="el" data-search="management equipe ingenierie internationale leadership">
+          <span class="tag">Engineering Leadership</span>
+          <h3><a href="blog/article-08.html">Manager une équipe d'ingénierie répartie entre plusieurs pays</a></h3>
+          <p class="article-excerpt">Bonnes pratiques pour animer une équipe technique internationale au quotidien.</p>
+          <div class="article-meta"><span>7 min</span><span>26/02/2025</span></div>
+        </article>
+
+        <article class="article-card" data-article-card data-category="gp" data-search="planification ressources projet ingenierie complexe">
+          <span class="tag">Gestion de projet technique</span>
+          <h3><a href="blog/article-09.html">Planification des ressources dans un projet d'ingénierie complexe</a></h3>
+          <p class="article-excerpt">Anticiper les besoins en compétences sur un projet d'ingénierie pluriannuel.</p>
+          <div class="article-meta"><span>8 min</span><span>05/03/2025</span></div>
+        </article>
+
+        <article class="article-card" data-article-card data-category="gp" data-search="offre technique commerciale ingenierie chiffrage">
+          <span class="tag">Gestion de projet technique</span>
+          <h3><a href="blog/article-10.html">Comment structurer une offre technique et commerciale en ingénierie</a></h3>
+          <p class="article-excerpt">La structure d'une offre convaincante entre solution technique et cadrage commercial.</p>
+          <div class="article-meta"><span>8 min</span><span>12/03/2025</span></div>
+        </article>
+
+        <article class="article-card" data-article-card data-category="is" data-search="ingenierie systeme exigence validation">
+          <span class="tag">Ingénierie système</span>
+          <h3><a href="blog/article-11.html">Ingénierie système : de l'exigence à la validation</a></h3>
+          <p class="article-excerpt">Un panorama des pratiques d'ingénierie système appliquées à l'automobile.</p>
+          <div class="article-meta"><span>10 min</span><span>19/03/2025</span></div>
+        </article>
+
+        <article class="article-card" data-article-card data-category="is" data-search="tracabilite exigences tests resultats">
+          <span class="tag">Ingénierie système</span>
+          <h3><a href="blog/article-12.html">Comment améliorer la traçabilité entre exigences, tests et résultats</a></h3>
+          <p class="article-excerpt">Construire une chaîne de traçabilité fiable entre exigences et résultats de test.</p>
+          <div class="article-meta"><span>8 min</span><span>26/03/2025</span></div>
+        </article>
+
+        <article class="article-card" data-article-card data-category="is" data-search="configuration systeme maturite projet automobile">
+          <span class="tag">Ingénierie système</span>
+          <h3><a href="blog/article-13.html">Configuration système et maturité projet dans le développement automobile</a></h3>
+          <p class="article-excerpt">Suivre la maturité d'un système à travers sa configuration et ses jalons.</p>
+          <div class="article-meta"><span>8 min</span><span>02/04/2025</span></div>
+        </article>
+
+        <article class="article-card" data-article-card data-category="is" data-search="architecture fonctionnelle automobile principes">
+          <span class="tag">Ingénierie système</span>
+          <h3><a href="blog/article-14.html">Architecture fonctionnelle automobile : principes et bonnes pratiques</a></h3>
+          <p class="article-excerpt">Les fondamentaux d'une architecture fonctionnelle robuste et évolutive.</p>
+          <div class="article-meta"><span>9 min</span><span>09/04/2025</span></div>
+        </article>
+
+        <article class="article-card" data-article-card data-category="se" data-search="integration hardware software calculateur automobile">
+          <span class="tag">Systèmes embarqués</span>
+          <h3><a href="blog/article-15.html">Intégration hardware et software dans un calculateur automobile</a></h3>
+          <p class="article-excerpt">Les points de vigilance lors de l'intégration hardware/software d'un ECU.</p>
+          <div class="article-meta"><span>8 min</span><span>16/04/2025</span></div>
+        </article>
+
+        <article class="article-card" data-article-card data-category="se" data-search="communication can diagnostic ecu">
+          <span class="tag">Systèmes embarqués</span>
+          <h3><a href="blog/article-16.html">Communication CAN et diagnostic ECU : notions essentielles pour un chef de projet</a></h3>
+          <p class="article-excerpt">Ce qu'un chef de projet doit comprendre du bus CAN et du diagnostic embarqué.</p>
+          <div class="article-meta"><span>8 min</span><span>23/04/2025</span></div>
+        </article>
+
+        <article class="article-card" data-article-card data-category="va" data-search="strategie validation systeme embarque">
+          <span class="tag">Validation automobile</span>
+          <h3><a href="blog/article-17.html">Comment construire une stratégie de validation pour un système embarqué</a></h3>
+          <p class="article-excerpt">Définir périmètre, moyens et jalons d'une stratégie de validation robuste.</p>
+          <div class="article-meta"><span>9 min</span><span>30/04/2025</span></div>
+        </article>
+
+        <article class="article-card" data-article-card data-category="va" data-search="plan de validation structure tracabilite criteres">
+          <span class="tag">Validation automobile</span>
+          <h3><a href="blog/article-18.html">Plan de validation : structure, traçabilité et critères de réussite</a></h3>
+          <p class="article-excerpt">Comment structurer un plan de validation lisible et exploitable.</p>
+          <div class="article-meta"><span>8 min</span><span>07/05/2025</span></div>
+        </article>
+
+        <article class="article-card" data-article-card data-category="va" data-search="mil sil hil essais vehicule niveaux de validation">
+          <span class="tag">Validation automobile</span>
+          <h3><a href="blog/article-19.html">SIL, MIL, HIL et essais véhicule : comprendre les différents niveaux de validation</a></h3>
+          <p class="article-excerpt">Clarifier les niveaux de validation automobile et leur complémentarité.</p>
+          <div class="article-meta"><span>9 min</span><span>14/05/2025</span></div>
+        </article>
+
+        <article class="article-card" data-article-card data-category="va" data-search="redaction cas de test exigences systeme">
+          <span class="tag">Validation automobile</span>
+          <h3><a href="blog/article-20.html">Comment rédiger des cas de test efficaces à partir des exigences système</a></h3>
+          <p class="article-excerpt">Méthode pour transformer une exigence en cas de test exploitable.</p>
+          <div class="article-meta"><span>8 min</span><span>21/05/2025</span></div>
+        </article>
+
+        <article class="article-card" data-article-card data-category="va" data-search="couverture de test indicateurs bonnes pratiques">
+          <span class="tag">Validation automobile</span>
+          <h3><a href="blog/article-21.html">Couverture de test : indicateurs, limites et bonnes pratiques</a></h3>
+          <p class="article-excerpt">Ce que la couverture de test montre, et ce qu'elle ne montre pas.</p>
+          <div class="article-meta"><span>7 min</span><span>28/05/2025</span></div>
+        </article>
+
+        <article class="article-card" data-article-card data-category="va" data-search="gestion anomalies non conformites automobile">
+          <span class="tag">Validation automobile</span>
+          <h3><a href="blog/article-22.html">Gestion des anomalies et non-conformités dans un projet automobile</a></h3>
+          <p class="article-excerpt">Structurer le cycle de vie d'une anomalie, de la détection à la clôture.</p>
+          <div class="article-meta"><span>8 min</span><span>04/06/2025</span></div>
+        </article>
+
+        <article class="article-card" data-article-card data-category="va" data-search="analyse test en echec plan de resolution">
+          <span class="tag">Validation automobile</span>
+          <h3><a href="blog/article-23.html">Comment analyser un test en échec et construire un plan de résolution</a></h3>
+          <p class="article-excerpt">Démarche d'analyse d'un échec de test jusqu'au plan d'action correctif.</p>
+          <div class="article-meta"><span>8 min</span><span>11/06/2025</span></div>
+        </article>
+
+        <article class="article-card" data-article-card data-category="at" data-search="robot framework systemes embarques automatisation">
+          <span class="tag">Automatisation des tests</span>
+          <h3><a href="blog/article-24.html">Automatisation des tests avec Robot Framework dans les systèmes embarqués</a></h3>
+          <p class="article-excerpt">Panorama pratique de Robot Framework appliqué à la validation automobile.</p>
+          <div class="article-meta"><span>8 min</span><span>18/06/2025</span></div>
+        </article>
+
+        <article class="article-card" data-article-card data-category="at" data-search="hlk llk automatisation tests haut niveau script executable">
+          <span class="tag">Automatisation des tests</span>
+          <h3><a href="blog/article-25.html">Du test haut niveau au script exécutable : comprendre HLK et LLK</a></h3>
+          <p class="article-excerpt">La différence entre un test haut niveau et son implémentation exécutable.</p>
+          <div class="article-meta"><span>7 min</span><span>25/06/2025</span></div>
+        </article>
+
+        <article class="article-card" data-article-card data-category="at" data-search="capl validation automobile bonnes pratiques">
+          <span class="tag">Automatisation des tests</span>
+          <h3><a href="blog/article-26.html">CAPL pour la validation automobile : usages et bonnes pratiques</a></h3>
+          <p class="article-excerpt">Comprendre le rôle de CAPL dans les campagnes de validation automobile.</p>
+          <div class="article-meta"><span>8 min</span><span>02/07/2025</span></div>
+        </article>
+
+        <article class="article-card" data-article-card data-category="at" data-search="tests automatises gitlab ci integration continue">
+          <span class="tag">Automatisation des tests</span>
+          <h3><a href="blog/article-27.html">Intégrer les tests automatisés dans GitLab CI</a></h3>
+          <p class="article-excerpt">Distinguer gestion de version et pipeline d'intégration continue avec GitLab.</p>
+          <div class="article-meta"><span>8 min</span><span>09/07/2025</span></div>
+        </article>
+
+        <article class="article-card" data-article-card data-category="se" data-search="dispositif embarque mesure temps reel">
+          <span class="tag">Systèmes embarqués</span>
+          <h3><a href="blog/article-28.html">Développer un dispositif embarqué de mesure en temps réel</a></h3>
+          <p class="article-excerpt">Retour d'expérience générique sur la conception d'un système de mesure embarqué.</p>
+          <div class="article-meta"><span>9 min</span><span>16/07/2025</span></div>
+        </article>
+
+        <article class="article-card" data-article-card data-category="se" data-search="cahier des charges logiciel embarque en c">
+          <span class="tag">Systèmes embarqués</span>
+          <h3><a href="blog/article-29.html">Du cahier des charges au logiciel embarqué en C</a></h3>
+          <p class="article-excerpt">Les étapes clés pour transformer un cahier des charges en logiciel embarqué fiable.</p>
+          <div class="article-meta"><span>9 min</span><span>23/07/2025</span></div>
+        </article>
+
+        <article class="article-card" data-article-card data-category="va" data-search="tests unitaires validation systeme passage en production">
+          <span class="tag">Validation automobile</span>
+          <h3><a href="blog/article-30.html">Tests unitaires, validation système et préparation au passage en production</a></h3>
+          <p class="article-excerpt">Comment enchaîner tests unitaires et validation système avant la mise en production.</p>
+          <div class="article-meta"><span>9 min</span><span>30/07/2025</span></div>
+        </article>
+
+        <article class="article-card" data-article-card data-category="sn" data-search="servicenow itsm apercu vue ensemble">
+          <span class="tag">ServiceNow</span>
+          <h3><a href="blog/article-31.html">Qu'est-ce que ServiceNow ITSM : vue d'ensemble</a></h3>
+          <p class="article-excerpt">Panorama de la plateforme ServiceNow ITSM et de ses modules clés.</p>
+          <div class="article-meta"><span>8 min</span><span>06/08/2025</span></div>
+        </article>
+
+        <article class="article-card" data-article-card data-category="sn" data-search="servicenow csa certification preparation">
+          <span class="tag">ServiceNow</span>
+          <h3><a href="blog/article-32.html">Devenir ServiceNow Certified System Administrator (CSA)</a></h3>
+          <p class="article-excerpt">Guide de préparation à la certification ServiceNow CSA.</p>
+          <div class="article-meta"><span>8 min</span><span>13/08/2025</span></div>
+        </article>
+
+        <article class="article-card" data-article-card data-category="sn" data-search="servicenow gestion incidents configuration">
+          <span class="tag">ServiceNow</span>
+          <h3><a href="blog/article-33.html">Configurer la gestion des incidents dans ServiceNow</a></h3>
+          <p class="article-excerpt">Les étapes clés pour configurer le module Incident Management.</p>
+          <div class="article-meta"><span>9 min</span><span>20/08/2025</span></div>
+        </article>
+
+        <article class="article-card" data-article-card data-category="sn" data-search="servicenow cycle de vie incident etats">
+          <span class="tag">ServiceNow</span>
+          <h3><a href="blog/article-34.html">Comprendre le cycle de vie d'un incident ServiceNow</a></h3>
+          <p class="article-excerpt">Les états d'un incident, de sa création à sa clôture.</p>
+          <div class="article-meta"><span>7 min</span><span>27/08/2025</span></div>
+        </article>
+
+        <article class="article-card" data-article-card data-category="sn" data-search="servicenow priorite sla modele">
+          <span class="tag">ServiceNow</span>
+          <h3><a href="blog/article-35.html">Définir un modèle de priorité et de SLA dans ServiceNow</a></h3>
+          <p class="article-excerpt">Construire une matrice de priorité et des SLA exploitables.</p>
+          <div class="article-meta"><span>8 min</span><span>03/09/2025</span></div>
+        </article>
+
+        <article class="article-card" data-article-card data-category="sn" data-search="servicenow notifications regles affectation">
+          <span class="tag">ServiceNow</span>
+          <h3><a href="blog/article-36.html">Notifications et règles d'affectation dans ServiceNow</a></h3>
+          <p class="article-excerpt">Configurer des notifications utiles et des règles d'affectation efficaces.</p>
+          <div class="article-meta"><span>8 min</span><span>10/09/2025</span></div>
+        </article>
+
+        <article class="article-card" data-article-card data-category="sn" data-search="servicenow business rules scripting serveur">
+          <span class="tag">ServiceNow</span>
+          <h3><a href="blog/article-37.html">Business Rules dans ServiceNow</a></h3>
+          <p class="article-excerpt">Principes et bonnes pratiques d'écriture des Business Rules.</p>
+          <div class="article-meta"><span>8 min</span><span>17/09/2025</span></div>
+        </article>
+
+        <article class="article-card" data-article-card data-category="sn" data-search="servicenow client scripts ui policies formulaires">
+          <span class="tag">ServiceNow</span>
+          <h3><a href="blog/article-38.html">Client Scripts et UI Policies dans ServiceNow</a></h3>
+          <p class="article-excerpt">Bien choisir entre Client Scripts et UI Policies.</p>
+          <div class="article-meta"><span>7 min</span><span>24/09/2025</span></div>
+        </article>
+
+        <article class="article-card" data-article-card data-category="sn" data-search="servicenow script includes logique serveur">
+          <span class="tag">ServiceNow</span>
+          <h3><a href="blog/article-39.html">Script Includes dans ServiceNow</a></h3>
+          <p class="article-excerpt">Structurer et réutiliser la logique serveur avec les Script Includes.</p>
+          <div class="article-meta"><span>8 min</span><span>01/10/2025</span></div>
+        </article>
+
+        <article class="article-card" data-article-card data-category="sn" data-search="servicenow ui actions boutons interactions">
+          <span class="tag">ServiceNow</span>
+          <h3><a href="blog/article-40.html">UI Actions dans ServiceNow</a></h3>
+          <p class="article-excerpt">Personnaliser les interactions utilisateur avec les UI Actions.</p>
+          <div class="article-meta"><span>7 min</span><span>08/10/2025</span></div>
+        </article>
+
+        <article class="article-card" data-article-card data-category="sn" data-search="servicenow scheduled jobs taches automatisees">
+          <span class="tag">ServiceNow</span>
+          <h3><a href="blog/article-41.html">Scheduled Jobs dans ServiceNow</a></h3>
+          <p class="article-excerpt">Automatiser des tâches récurrentes de façon fiable.</p>
+          <div class="article-meta"><span>7 min</span><span>15/10/2025</span></div>
+        </article>
+
+        <article class="article-card" data-article-card data-category="sn" data-search="servicenow acl access control lists securite">
+          <span class="tag">ServiceNow</span>
+          <h3><a href="blog/article-42.html">Comprendre les ACL dans ServiceNow</a></h3>
+          <p class="article-excerpt">Principes fondamentaux des ACL pour sécuriser l'accès aux données.</p>
+          <div class="article-meta"><span>8 min</span><span>22/10/2025</span></div>
+        </article>
+
+        <article class="article-card" data-article-card data-category="sn" data-search="servicenow gliderecordsecure securite donnees">
+          <span class="tag">ServiceNow</span>
+          <h3><a href="blog/article-43.html">GlideRecordSecure et la sécurité des données</a></h3>
+          <p class="article-excerpt">Pourquoi privilégier GlideRecordSecure dans les scripts serveur.</p>
+          <div class="article-meta"><span>7 min</span><span>29/10/2025</span></div>
+        </article>
+
+        <article class="article-card" data-article-card data-category="sn" data-search="servicenow service portal libre service">
+          <span class="tag">ServiceNow</span>
+          <h3><a href="blog/article-44.html">Construire un Service Portal dans ServiceNow</a></h3>
+          <p class="article-excerpt">Concevoir un portail en libre-service clair et utile.</p>
+          <div class="article-meta"><span>8 min</span><span>05/11/2025</span></div>
+        </article>
+
+        <article class="article-card" data-article-card data-category="sn" data-search="servicenow rapports tableaux de bord dashboards">
+          <span class="tag">ServiceNow</span>
+          <h3><a href="blog/article-45.html">Rapports et tableaux de bord dans ServiceNow</a></h3>
+          <p class="article-excerpt">Concevoir des rapports utiles pour le pilotage des services IT.</p>
+          <div class="article-meta"><span>8 min</span><span>12/11/2025</span></div>
+        </article>
+
+        <article class="article-card" data-article-card data-category="sn" data-search="servicenow update sets deploiements">
+          <span class="tag">ServiceNow</span>
+          <h3><a href="blog/article-46.html">Update Sets : gérer les déploiements dans ServiceNow</a></h3>
+          <p class="article-excerpt">Gérer proprement les déploiements de configuration.</p>
+          <div class="article-meta"><span>8 min</span><span>19/11/2025</span></div>
+        </article>
+
+        <article class="article-card" data-article-card data-category="sn" data-search="servicenow cmdb qualite donnees">
+          <span class="tag">ServiceNow</span>
+          <h3><a href="blog/article-47.html">Qualité des données CMDB dans ServiceNow</a></h3>
+          <p class="article-excerpt">Pourquoi et comment améliorer la qualité des données CMDB.</p>
+          <div class="article-meta"><span>8 min</span><span>26/11/2025</span></div>
+        </article>
+
+        <article class="article-card" data-article-card data-category="sn" data-search="servicenow analyse performance instance">
+          <span class="tag">ServiceNow</span>
+          <h3><a href="blog/article-48.html">Analyser la performance d'une instance ServiceNow</a></h3>
+          <p class="article-excerpt">Méthode d'analyse : temps de réponse, temps SQL, temps ACL.</p>
+          <div class="article-meta"><span>9 min</span><span>03/12/2025</span></div>
+        </article>
+
+        <article class="article-card" data-article-card data-category="sn" data-search="servicenow ia generative agentique intelligence artificielle">
+          <span class="tag">ServiceNow</span>
+          <h3><a href="blog/article-49.html">Introduction à l'IA générative et à l'IA agentique dans ServiceNow</a></h3>
+          <p class="article-excerpt">Panorama des capacités d'IA générative et agentique de la plateforme.</p>
+          <div class="article-meta"><span>8 min</span><span>10/12/2025</span></div>
+        </article>
+
+        <article class="article-card" data-article-card data-category="sn" data-search="servicenow bonnes pratiques administration instance personnelle">
+          <span class="tag">ServiceNow</span>
+          <h3><a href="blog/article-50.html">Bonnes pratiques pour administrer une instance ServiceNow personnelle</a></h3>
+          <p class="article-excerpt">Organiser, documenter et faire progresser sa pratique ServiceNow.</p>
+          <div class="article-meta"><span>8 min</span><span>17/12/2025</span></div>
+        </article>
+
+      </div>
+
+      <div class="empty-state" id="blogEmptyState" hidden role="status">
+        <h3>Aucun article ne correspond à votre recherche</h3>
+        <p>Essayez un autre mot-clé ou réinitialisez les filtres pour retrouver l'ensemble des articles.</p>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>Taoufik GASSEM</h3>
+        <p>Technical Project Manager - Embedded Systems. Pilotage de projets techniques, ingénierie système et validation automobile.</p>
+        <p><a href="https://www.linkedin.com/in/taoufik-g-387964129/" target="_blank" rel="noopener noreferrer">LinkedIn →</a></p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="about.html">À propos</a></li>
+          <li><a href="experience.html">Expérience</a></li>
+          <li><a href="expertise.html">Expertises</a></li>
+          <li><a href="projects.html">Projets</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Ressources</h4>
+        <ul>
+          <li><a href="certifications.html">Certifications</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="privacy.html">Confidentialité</a></li>
+          <li><a href="legal.html">Mentions légales</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-current-year></span> Taoufik GASSEM — Tous droits réservés.</span>
+      <span>Technical Project Manager - Embedded Systems</span>
+    </div>
+  </div>
+</footer>
+
+<button class="back-to-top" aria-label="Retour en haut de page">↑</button>
+<script src="js/main.js" defer></script>
+<script src="js/blog.js" defer></script>
+</body>
+</html>

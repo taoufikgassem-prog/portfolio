@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rapports et tableaux de bord dans ServiceNow | Blog Taoufik Gassem</title>
+<meta name="description" content="Concevoir des rapports et tableaux de bord ServiceNow utiles pour le pilotage des services IT.">
+<link rel="canonical" href="https://taoufikgassem.arena.site/blog/rapports-tableaux-bord-servicenow.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Rapports et tableaux de bord dans ServiceNow">
+<meta property="og:description" content="Concevoir des rapports et tableaux de bord ServiceNow utiles pour le pilotage des services IT.">
+<meta property="og:image" content="https://taoufikgassem.arena.site/assets/images/taoufik-gassem-technical-project-manager.webp">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/responsive.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","headline":"Rapports et tableaux de bord dans ServiceNow","datePublished":"2025-11-12","dateModified":"2025-11-12","author":{"@type":"Person","name":"Taoufik GASSEM"},"image":"https://taoufikgassem.arena.site/assets/images/taoufik-gassem-technical-project-manager.webp","mainEntityOfPage":"https://taoufikgassem.arena.site/blog/rapports-tableaux-bord-servicenow.html"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://taoufikgassem.arena.site/index.html"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://taoufikgassem.arena.site/blog.html"},{"@type":"ListItem","position":3,"name":"Rapports et tableaux de bord","item":"https://taoufikgassem.arena.site/blog/rapports-tableaux-bord-servicenow.html"}]}
+</script>
+</head>
+<body data-page="blog">
+<a class="skip-link" href="#main-content">Aller au contenu principal</a>
+<div class="nav-backdrop"></div>
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="../index.html" class="logo" aria-label="Taoufik Gassem - Accueil"><span class="logo-mark" aria-hidden="true">TG</span><span class="logo-full">Taoufik GASSEM</span></a>
+    <nav class="main-nav" id="main-nav" aria-label="Navigation principale">
+      <ul>
+        <li><a href="../index.html">Accueil</a></li><li><a href="../about.html">À propos</a></li><li><a href="../experience.html">Expérience</a></li>
+        <li><a href="../expertise.html">Expertises</a></li><li><a href="../projects.html">Projets</a></li><li><a href="../certifications.html">Certifications</a></li>
+        <li><a href="../blog.html" aria-current="page">Blog</a></li><li><a href="../contact.html">Contact</a></li>
+      </ul>
+      <a href="../contact.html" class="btn btn-primary btn-block nav-cta-mobile">Me contacter</a>
+    </nav>
+    <div class="header-actions">
+      <a href="../contact.html" class="btn btn-primary btn-nav-cta">Me contacter</a>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="main-nav" aria-label="Ouvrir le menu de navigation"><span class="nav-toggle-icon"></span></button>
+    </div>
+  </div>
+</header>
+<div class="reading-progress"></div>
+<main id="main-content">
+  <section class="article-header">
+    <div class="container">
+      <ol class="breadcrumbs"><li><a href="../index.html">Accueil</a></li><li><a href="../blog.html">Blog</a></li><li>Rapports et tableaux de bord</li></ol>
+      <span class="tag">ServiceNow</span>
+      <h1>Rapports et tableaux de bord dans ServiceNow</h1>
+      <div class="article-title-meta"><span>Par Taoufik Gassem</span><span>Publié le 12 novembre 2025</span><span>Mis à jour le 12 novembre 2025</span><span>8 min de lecture</span></div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container article-layout">
+      <nav class="article-toc" aria-label="Sommaire de l'article">
+        <h2>Sommaire</h2>
+        <ol>
+          <li><a href="#rapports-vs-dashboards">Rapports et tableaux de bord : quelle différence</a></li>
+          <li><a href="#construire-rapport">Construire un rapport utile</a></li>
+          <li><a href="#organiser-dashboard">Organiser un tableau de bord</a></li>
+          <li><a href="#partage-diffusion">Partage et diffusion</a></li>
+          <li><a href="#checklist">Checklist rapports et dashboards</a></li>
+          <li><a href="#conclusion">Conclusion</a></li>
+        </ol>
+      </nav>
+      <article class="article-body">
+        <p>Les rapports et tableaux de bord de ServiceNow permettent de transformer les données opérationnelles de la plateforme en informations exploitables pour le pilotage des services IT. Leur conception mérite autant de soin que celle des processus qu'ils mesurent.</p>
+
+        <h2 id="rapports-vs-dashboards">Rapports et tableaux de bord : quelle différence</h2>
+        <p>Un rapport présente une donnée ou un ensemble de données sous une forme précise (graphique, tableau, liste), tandis qu'un tableau de bord (dashboard) regroupe plusieurs rapports au sein d'une vue unique, offrant une vision synthétique adaptée à un public ou un objectif donné.</p>
+
+        <h2 id="construire-rapport">Construire un rapport utile</h2>
+        <p>Un rapport utile répond à une question précise : combien d'incidents sont ouverts par priorité, quelle est la tendance des SLA respectés sur les dernières semaines, quelle charge pèse sur chaque groupe de support. Un rapport construit sans question claire en tête produit rarement une information exploitable.</p>
+
+        <h2 id="organiser-dashboard">Organiser un tableau de bord</h2>
+        <p>Un tableau de bord efficace regroupe des rapports cohérents entre eux, destinés à un public identifié : un dashboard pour les équipes opérationnelles n'a pas la même vocation qu'un dashboard destiné au management. Multiplier les indicateurs sur un même tableau de bord, sans hiérarchie claire, nuit à sa lisibilité.</p>
+        <h3>Lien avec le suivi des SLA</h3>
+        <p>Le suivi du respect des SLA, abordé dans l'article <a href="article-35.html">Définir un modèle de priorité et de SLA dans ServiceNow</a>, s'appuie généralement sur des rapports dédiés, intégrés dans un tableau de bord de performance du support.</p>
+
+        <h2 id="partage-diffusion">Partage et diffusion</h2>
+        <p>ServiceNow permet de partager des rapports et tableaux de bord avec des utilisateurs ou des groupes spécifiques, et de planifier leur envoi périodique par email. Cette diffusion régulière peut faciliter le suivi proactif des indicateurs par les parties prenantes concernées.</p>
+
+        <h2 id="checklist">Checklist rapports et tableaux de bord</h2>
+        <ul class="article-checklist">
+          <li>Chaque rapport répond à une question de pilotage clairement identifiée.</li>
+          <li>Les tableaux de bord sont organisés par public cible, pas de façon générique.</li>
+          <li>Le nombre d'indicateurs par tableau de bord reste raisonnable et hiérarchisé.</li>
+          <li>La diffusion des rapports est adaptée à la fréquence de décision des destinataires.</li>
+        </ul>
+
+        <blockquote>Un rapport qui ne répond à aucune question de pilotage précise finit rarement consulté durablement.</blockquote>
+
+        <h2 id="conclusion">Conclusion</h2>
+        <p>Les rapports et tableaux de bord de ServiceNow sont des outils puissants de pilotage, à condition d'être conçus autour de questions précises et d'un public cible clairement identifié. Cette discipline de conception conditionne leur utilité réelle dans la durée.</p>
+
+        <div class="article-cta"><p><strong>Vous concevez des rapports de pilotage ServiceNow ?</strong> <a href="../contact.html">Échangeons</a>.</p></div>
+
+        <div class="article-share">
+          <button class="btn btn-outline btn-sm" data-copy-link>Copier le lien de l'article</button>
+          <a class="btn btn-outline btn-sm" href="https://www.linkedin.com/sharing/share-offsite/?url=https://taoufikgassem.arena.site/blog/rapports-tableaux-bord-servicenow.html" target="_blank" rel="noopener noreferrer">Partager sur LinkedIn</a>
+        </div>
+
+        <nav class="article-nav" aria-label="Navigation entre articles">
+          <a href="article-44.html"><span class="nav-label">Article précédent</span>Construire un Service Portal dans ServiceNow</a>
+          <a href="article-46.html" class="next"><span class="nav-label">Article suivant</span>Update Sets : gérer les déploiements dans ServiceNow</a>
+        </nav>
+
+        <div class="related-articles">
+          <h2>Articles liés</h2>
+          <div class="grid grid-3">
+            <div class="card"><h3><a href="article-35.html">Définir un modèle de priorité et de SLA</a></h3></div>
+            <div class="card"><h3><a href="article-48.html">Analyser la performance d'une instance ServiceNow</a></h3></div>
+            <div class="card"><h3><a href="article-44.html">Construire un Service Portal dans ServiceNow</a></h3></div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><h3>Taoufik GASSEM</h3><p>Technical Project Manager - Embedded Systems.</p><p><a href="https://www.linkedin.com/in/taoufik-g-387964129/" target="_blank" rel="noopener noreferrer">LinkedIn →</a></p></div>
+      <div class="footer-col"><h4>Navigation</h4><ul><li><a href="../index.html">Accueil</a></li><li><a href="../about.html">À propos</a></li><li><a href="../experience.html">Expérience</a></li></ul></div>
+      <div class="footer-col"><h4>Ressources</h4><ul><li><a href="../blog.html">Blog</a></li><li><a href="../contact.html">Contact</a></li><li><a href="../privacy.html">Confidentialité</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© <span data-current-year></span> Taoufik GASSEM — Tous droits réservés.</span><span>Technical Project Manager - Embedded Systems</span></div>
+  </div>
+</footer>
+<button class="back-to-top" aria-label="Retour en haut de page">↑</button>
+<script src="../js/main.js" defer></script>
+</body>
+</html>

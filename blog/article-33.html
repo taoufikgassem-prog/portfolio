@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Configurer la gestion des incidents dans ServiceNow | Blog Taoufik Gassem</title>
+<meta name="description" content="Les étapes clés pour configurer le module de gestion des incidents dans ServiceNow, de bout en bout.">
+<link rel="canonical" href="https://taoufikgassem.arena.site/blog/configurer-gestion-incidents-servicenow.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Configurer la gestion des incidents dans ServiceNow">
+<meta property="og:description" content="Les étapes clés pour configurer le module de gestion des incidents dans ServiceNow, de bout en bout.">
+<meta property="og:image" content="https://taoufikgassem.arena.site/assets/images/taoufik-gassem-technical-project-manager.webp">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/responsive.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","headline":"Configurer la gestion des incidents dans ServiceNow","datePublished":"2025-08-20","dateModified":"2025-08-20","author":{"@type":"Person","name":"Taoufik GASSEM"},"image":"https://taoufikgassem.arena.site/assets/images/taoufik-gassem-technical-project-manager.webp","mainEntityOfPage":"https://taoufikgassem.arena.site/blog/configurer-gestion-incidents-servicenow.html"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://taoufikgassem.arena.site/index.html"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://taoufikgassem.arena.site/blog.html"},{"@type":"ListItem","position":3,"name":"Configurer la gestion des incidents","item":"https://taoufikgassem.arena.site/blog/configurer-gestion-incidents-servicenow.html"}]}
+</script>
+</head>
+<body data-page="blog">
+<a class="skip-link" href="#main-content">Aller au contenu principal</a>
+<div class="nav-backdrop"></div>
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="../index.html" class="logo" aria-label="Taoufik Gassem - Accueil"><span class="logo-mark" aria-hidden="true">TG</span><span class="logo-full">Taoufik GASSEM</span></a>
+    <nav class="main-nav" id="main-nav" aria-label="Navigation principale">
+      <ul>
+        <li><a href="../index.html">Accueil</a></li><li><a href="../about.html">À propos</a></li><li><a href="../experience.html">Expérience</a></li>
+        <li><a href="../expertise.html">Expertises</a></li><li><a href="../projects.html">Projets</a></li><li><a href="../certifications.html">Certifications</a></li>
+        <li><a href="../blog.html" aria-current="page">Blog</a></li><li><a href="../contact.html">Contact</a></li>
+      </ul>
+      <a href="../contact.html" class="btn btn-primary btn-block nav-cta-mobile">Me contacter</a>
+    </nav>
+    <div class="header-actions">
+      <a href="../contact.html" class="btn btn-primary btn-nav-cta">Me contacter</a>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="main-nav" aria-label="Ouvrir le menu de navigation"><span class="nav-toggle-icon"></span></button>
+    </div>
+  </div>
+</header>
+<div class="reading-progress"></div>
+<main id="main-content">
+  <section class="article-header">
+    <div class="container">
+      <ol class="breadcrumbs"><li><a href="../index.html">Accueil</a></li><li><a href="../blog.html">Blog</a></li><li>Configurer la gestion des incidents</li></ol>
+      <span class="tag">ServiceNow</span>
+      <h1>Configurer la gestion des incidents dans ServiceNow</h1>
+      <div class="article-title-meta"><span>Par Taoufik Gassem</span><span>Publié le 20 août 2025</span><span>Mis à jour le 20 août 2025</span><span>9 min de lecture</span></div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container article-layout">
+      <nav class="article-toc" aria-label="Sommaire de l'article">
+        <h2>Sommaire</h2>
+        <ol>
+          <li><a href="#etapes-config">Les grandes étapes de configuration</a></li>
+          <li><a href="#formulaires">Formulaires et champs</a></li>
+          <li><a href="#regles-metier">Règles métier associées</a></li>
+          <li><a href="#tests-config">Tester la configuration</a></li>
+          <li><a href="#checklist">Checklist de configuration</a></li>
+          <li><a href="#conclusion">Conclusion</a></li>
+        </ol>
+      </nav>
+      <article class="article-body">
+        <p>Configurer le module de gestion des incidents dans ServiceNow suppose de définir un cycle de vie clair, des formulaires adaptés aux besoins des utilisateurs, et des règles automatisées cohérentes. Cet article présente une démarche de configuration de bout en bout, telle qu'expérimentée sur une instance personnelle.</p>
+
+        <h2 id="etapes-config">Les grandes étapes de configuration</h2>
+        <p>La configuration d'un module Incident Management passe généralement par plusieurs étapes : définition du cycle de vie et des états, conception du modèle de priorité, mise en place des règles d'affectation, configuration des notifications, puis validation par des tests fonctionnels complets.</p>
+
+        <h2 id="formulaires">Formulaires et champs</h2>
+        <p>Le formulaire d'incident doit rester lisible pour l'utilisateur qui le remplit, tout en capturant les informations nécessaires à son traitement : catégorie, impact, urgence, description, éléments de configuration concernés. Un formulaire trop chargé décourage une saisie de qualité, ce qui dégrade en retour la fiabilité du reporting.</p>
+
+        <h2 id="regles-metier">Règles métier associées</h2>
+        <p>Les Business Rules permettent d'automatiser des comportements lors de la création ou de la mise à jour d'un incident : calcul automatique de la priorité à partir de l'impact et de l'urgence, affectation automatique à un groupe de support, ou déclenchement de notifications. Ce sujet est approfondi dans l'article <a href="article-37.html">Business Rules dans ServiceNow : principes et bonnes pratiques</a>.</p>
+        <h3>Le modèle de priorité et les SLA</h3>
+        <p>La définition d'un modèle de priorité cohérent, associé à des accords de niveau de service (SLA), est un pilier de la gestion des incidents. Ce point est traité en détail dans l'article <a href="article-35.html">Définir un modèle de priorité et de SLA dans ServiceNow</a>.</p>
+
+        <h2 id="tests-config">Tester la configuration</h2>
+        <p>Avant toute mise en service, la configuration doit être testée avec des scénarios représentatifs : création d'incidents de différentes priorités, vérification des règles d'affectation, contrôle des notifications envoyées. Ces tests permettent de détecter les incohérences avant qu'elles n'affectent des utilisateurs réels.</p>
+
+        <h2 id="checklist">Checklist de configuration de la gestion des incidents</h2>
+        <ul class="article-checklist">
+          <li>Le cycle de vie et les états de l'incident sont définis clairement.</li>
+          <li>Le formulaire capture les informations essentielles sans surcharge inutile.</li>
+          <li>Les règles métier d'automatisation sont testées avec des scénarios variés.</li>
+          <li>Les notifications sont vérifiées pour chaque étape clé du cycle de vie.</li>
+        </ul>
+
+        <blockquote>Un module de gestion des incidents bien configuré se juge autant à la simplicité de son formulaire qu'à la fiabilité de ses automatisations.</blockquote>
+
+        <h2 id="conclusion">Conclusion</h2>
+        <p>Configurer la gestion des incidents dans ServiceNow demande une approche structurée, du cycle de vie jusqu'aux tests fonctionnels. Cette rigueur garantit un module exploitable et fiable pour les équipes de support IT.</p>
+
+        <div class="article-cta"><p><strong>Vous souhaitez échanger sur une configuration ServiceNow ITSM ?</strong> Consultez la page <a href="../projects.html#servicenow">Projets personnels ServiceNow</a> ou <a href="../contact.html">échangeons</a>.</p></div>
+
+        <div class="article-share">
+          <button class="btn btn-outline btn-sm" data-copy-link>Copier le lien de l'article</button>
+          <a class="btn btn-outline btn-sm" href="https://www.linkedin.com/sharing/share-offsite/?url=https://taoufikgassem.arena.site/blog/configurer-gestion-incidents-servicenow.html" target="_blank" rel="noopener noreferrer">Partager sur LinkedIn</a>
+        </div>
+
+        <nav class="article-nav" aria-label="Navigation entre articles">
+          <a href="article-32.html"><span class="nav-label">Article précédent</span>Devenir ServiceNow Certified System Administrator (CSA)</a>
+          <a href="article-34.html" class="next"><span class="nav-label">Article suivant</span>Comprendre le cycle de vie d'un incident ServiceNow</a>
+        </nav>
+
+        <div class="related-articles">
+          <h2>Articles liés</h2>
+          <div class="grid grid-3">
+            <div class="card"><h3><a href="article-34.html">Comprendre le cycle de vie d'un incident ServiceNow</a></h3></div>
+            <div class="card"><h3><a href="article-35.html">Définir un modèle de priorité et de SLA dans ServiceNow</a></h3></div>
+            <div class="card"><h3><a href="article-37.html">Business Rules dans ServiceNow</a></h3></div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><h3>Taoufik GASSEM</h3><p>Technical Project Manager - Embedded Systems.</p><p><a href="https://www.linkedin.com/in/taoufik-g-387964129/" target="_blank" rel="noopener noreferrer">LinkedIn →</a></p></div>
+      <div class="footer-col"><h4>Navigation</h4><ul><li><a href="../index.html">Accueil</a></li><li><a href="../about.html">À propos</a></li><li><a href="../experience.html">Expérience</a></li></ul></div>
+      <div class="footer-col"><h4>Ressources</h4><ul><li><a href="../blog.html">Blog</a></li><li><a href="../contact.html">Contact</a></li><li><a href="../privacy.html">Confidentialité</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© <span data-current-year></span> Taoufik GASSEM — Tous droits réservés.</span><span>Technical Project Manager - Embedded Systems</span></div>
+  </div>
+</footer>
+<button class="back-to-top" aria-label="Retour en haut de page">↑</button>
+<script src="../js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Du cahier des charges au logiciel embarqué en C | Blog Taoufik Gassem</title>
+<meta name="description" content="Les étapes clés pour transformer un cahier des charges en logiciel embarqué fiable, développé en C.">
+<link rel="canonical" href="https://taoufikgassem.arena.site/blog/cahier-charges-logiciel-embarque-c.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Du cahier des charges au logiciel embarqué en C">
+<meta property="og:description" content="Les étapes clés pour transformer un cahier des charges en logiciel embarqué fiable, développé en C.">
+<meta property="og:image" content="https://taoufikgassem.arena.site/assets/images/taoufik-gassem-technical-project-manager.webp">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/responsive.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","headline":"Du cahier des charges au logiciel embarqué en C","datePublished":"2025-07-23","dateModified":"2025-07-23","author":{"@type":"Person","name":"Taoufik GASSEM"},"image":"https://taoufikgassem.arena.site/assets/images/taoufik-gassem-technical-project-manager.webp","mainEntityOfPage":"https://taoufikgassem.arena.site/blog/cahier-charges-logiciel-embarque-c.html"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://taoufikgassem.arena.site/index.html"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://taoufikgassem.arena.site/blog.html"},{"@type":"ListItem","position":3,"name":"Cahier des charges logiciel C","item":"https://taoufikgassem.arena.site/blog/cahier-charges-logiciel-embarque-c.html"}]}
+</script>
+</head>
+<body data-page="blog">
+<a class="skip-link" href="#main-content">Aller au contenu principal</a>
+<div class="nav-backdrop"></div>
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="../index.html" class="logo" aria-label="Taoufik Gassem - Accueil"><span class="logo-mark" aria-hidden="true">TG</span><span class="logo-full">Taoufik GASSEM</span></a>
+    <nav class="main-nav" id="main-nav" aria-label="Navigation principale">
+      <ul>
+        <li><a href="../index.html">Accueil</a></li><li><a href="../about.html">À propos</a></li><li><a href="../experience.html">Expérience</a></li>
+        <li><a href="../expertise.html">Expertises</a></li><li><a href="../projects.html">Projets</a></li><li><a href="../certifications.html">Certifications</a></li>
+        <li><a href="../blog.html" aria-current="page">Blog</a></li><li><a href="../contact.html">Contact</a></li>
+      </ul>
+      <a href="../contact.html" class="btn btn-primary btn-block nav-cta-mobile">Me contacter</a>
+    </nav>
+    <div class="header-actions">
+      <a href="../contact.html" class="btn btn-primary btn-nav-cta">Me contacter</a>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="main-nav" aria-label="Ouvrir le menu de navigation"><span class="nav-toggle-icon"></span></button>
+    </div>
+  </div>
+</header>
+<div class="reading-progress"></div>
+<main id="main-content">
+  <section class="article-header">
+    <div class="container">
+      <ol class="breadcrumbs"><li><a href="../index.html">Accueil</a></li><li><a href="../blog.html">Blog</a></li><li>Cahier des charges logiciel C</li></ol>
+      <span class="tag">Systèmes embarqués</span>
+      <h1>Du cahier des charges au logiciel embarqué en C</h1>
+      <div class="article-title-meta"><span>Par Taoufik Gassem</span><span>Publié le 23 juillet 2025</span><span>Mis à jour le 23 juillet 2025</span><span>9 min de lecture</span></div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container article-layout">
+      <nav class="article-toc" aria-label="Sommaire de l'article">
+        <h2>Sommaire</h2>
+        <ol>
+          <li><a href="#lire-cahier-charges">Lire et analyser le cahier des charges</a></li>
+          <li><a href="#conception-logicielle">Concevoir avant de coder</a></li>
+          <li><a href="#developpement-c">Le développement en C</a></li>
+          <li><a href="#tests-integration">Tester au fil du développement</a></li>
+          <li><a href="#checklist">Checklist du développement embarqué en C</a></li>
+          <li><a href="#conclusion">Conclusion</a></li>
+        </ol>
+      </nav>
+      <article class="article-body">
+        <p>Transformer un cahier des charges en logiciel embarqué fiable, développé en langage C, suppose une démarche structurée : compréhension du besoin, conception avant codage, puis développement rigoureux accompagné de tests réguliers.</p>
+
+        <h2 id="lire-cahier-charges">Lire et analyser le cahier des charges</h2>
+        <p>La première étape consiste à analyser le cahier des charges pour en extraire les exigences fonctionnelles précises : quelles grandeurs mesurer ou calculer, avec quelle précision, selon quelle fréquence, et avec quelles contraintes de restitution (affichage, enregistrement). Cette analyse doit lever les ambiguïtés avant le début du développement.</p>
+
+        <h2 id="conception-logicielle">Concevoir avant de coder</h2>
+        <p>Avant d'écrire le code, il est utile de définir l'architecture logicielle du dispositif : découpage en modules fonctionnels, gestion des données partagées, structure des boucles de calcul et de communication. Cette étape de conception limite les refontes coûteuses en cours de développement.</p>
+
+        <h2 id="developpement-c">Le développement en C</h2>
+        <p>Le langage C reste largement utilisé dans le développement embarqué en raison de son contrôle fin des ressources matérielles et de sa portabilité sur de nombreuses architectures de microcontrôleurs. Sur un dispositif de mesure, le développement en C couvre typiquement le calcul de la grandeur physique d'intérêt, la gestion de l'affichage et l'enregistrement des données en temps réel.</p>
+        <h3>Bonnes pratiques de codage embarqué</h3>
+        <p>Le développement embarqué en C impose une vigilance particulière sur la gestion de la mémoire, la robustesse face aux erreurs de capteur et la lisibilité du code pour faciliter sa maintenance ultérieure, en particulier lorsque le dispositif est amené à évoluer après sa mise en service.</p>
+
+        <h2 id="tests-integration">Tester au fil du développement</h2>
+        <p>Plutôt que d'attendre la fin du développement pour tester l'ensemble du dispositif, il est préférable de tester chaque fonction au fur et à mesure de son développement, à travers des tests unitaires ciblés, avant de passer aux tests d'intégration sur le système complet.</p>
+
+        <h2 id="checklist">Checklist du développement embarqué en C</h2>
+        <ul class="article-checklist">
+          <li>Le cahier des charges est analysé et les ambiguïtés levées avant le développement.</li>
+          <li>Une architecture logicielle est définie avant l'écriture du code.</li>
+          <li>Chaque fonction critique est testée unitairement au fur et à mesure de son développement.</li>
+          <li>La gestion de la mémoire et la robustesse aux erreurs de capteur sont vérifiées explicitement.</li>
+        </ul>
+
+        <blockquote>Un logiciel embarqué fiable se construit progressivement, avec des tests unitaires réguliers, pas seulement à la toute fin du développement.</blockquote>
+
+        <h2 id="conclusion">Conclusion</h2>
+        <p>Le passage d'un cahier des charges à un logiciel embarqué en C fiable demande une démarche structurée, combinant analyse rigoureuse du besoin, conception préalable et tests réguliers tout au long du développement. Cette rigueur est déterminante pour la fiabilité du dispositif final.</p>
+
+        <div class="article-cta"><p><strong>Vous développez un logiciel embarqué critique ?</strong> <a href="../contact.html">Échangeons sur votre projet</a>.</p></div>
+
+        <div class="article-share">
+          <button class="btn btn-outline btn-sm" data-copy-link>Copier le lien de l'article</button>
+          <a class="btn btn-outline btn-sm" href="https://www.linkedin.com/sharing/share-offsite/?url=https://taoufikgassem.arena.site/blog/cahier-charges-logiciel-embarque-c.html" target="_blank" rel="noopener noreferrer">Partager sur LinkedIn</a>
+        </div>
+
+        <nav class="article-nav" aria-label="Navigation entre articles">
+          <a href="article-28.html"><span class="nav-label">Article précédent</span>Développer un dispositif embarqué de mesure en temps réel</a>
+          <a href="article-30.html" class="next"><span class="nav-label">Article suivant</span>Tests unitaires, validation système et passage en production</a>
+        </nav>
+
+        <div class="related-articles">
+          <h2>Articles liés</h2>
+          <div class="grid grid-3">
+            <div class="card"><h3><a href="article-28.html">Développer un dispositif embarqué de mesure en temps réel</a></h3></div>
+            <div class="card"><h3><a href="article-30.html">Tests unitaires, validation système et passage en production</a></h3></div>
+            <div class="card"><h3><a href="../projects.html#case-measurement">Étude de cas : dispositif embarqué de mesure</a></h3></div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><h3>Taoufik GASSEM</h3><p>Technical Project Manager - Embedded Systems.</p><p><a href="https://www.linkedin.com/in/taoufik-g-387964129/" target="_blank" rel="noopener noreferrer">LinkedIn →</a></p></div>
+      <div class="footer-col"><h4>Navigation</h4><ul><li><a href="../index.html">Accueil</a></li><li><a href="../about.html">À propos</a></li><li><a href="../experience.html">Expérience</a></li></ul></div>
+      <div class="footer-col"><h4>Ressources</h4><ul><li><a href="../blog.html">Blog</a></li><li><a href="../contact.html">Contact</a></li><li><a href="../privacy.html">Confidentialité</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© <span data-current-year></span> Taoufik GASSEM — Tous droits réservés.</span><span>Technical Project Manager - Embedded Systems</span></div>
+  </div>
+</footer>
+<button class="back-to-top" aria-label="Retour en haut de page">↑</button>
+<script src="../js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scheduled Jobs dans ServiceNow : automatiser les tâches récurrentes | Blog Taoufik Gassem</title>
+<meta name="description" content="Comment utiliser les Scheduled Jobs dans ServiceNow pour automatiser des tâches récurrentes de façon fiable.">
+<link rel="canonical" href="https://taoufikgassem.arena.site/blog/scheduled-jobs-servicenow.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Scheduled Jobs dans ServiceNow : automatiser les tâches récurrentes">
+<meta property="og:description" content="Comment utiliser les Scheduled Jobs dans ServiceNow pour automatiser des tâches récurrentes de façon fiable.">
+<meta property="og:image" content="https://taoufikgassem.arena.site/assets/images/taoufik-gassem-technical-project-manager.webp">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/responsive.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","headline":"Scheduled Jobs dans ServiceNow : automatiser les tâches récurrentes","datePublished":"2025-10-15","dateModified":"2025-10-15","author":{"@type":"Person","name":"Taoufik GASSEM"},"image":"https://taoufikgassem.arena.site/assets/images/taoufik-gassem-technical-project-manager.webp","mainEntityOfPage":"https://taoufikgassem.arena.site/blog/scheduled-jobs-servicenow.html"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://taoufikgassem.arena.site/index.html"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://taoufikgassem.arena.site/blog.html"},{"@type":"ListItem","position":3,"name":"Scheduled Jobs","item":"https://taoufikgassem.arena.site/blog/scheduled-jobs-servicenow.html"}]}
+</script>
+</head>
+<body data-page="blog">
+<a class="skip-link" href="#main-content">Aller au contenu principal</a>
+<div class="nav-backdrop"></div>
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="../index.html" class="logo" aria-label="Taoufik Gassem - Accueil"><span class="logo-mark" aria-hidden="true">TG</span><span class="logo-full">Taoufik GASSEM</span></a>
+    <nav class="main-nav" id="main-nav" aria-label="Navigation principale">
+      <ul>
+        <li><a href="../index.html">Accueil</a></li><li><a href="../about.html">À propos</a></li><li><a href="../experience.html">Expérience</a></li>
+        <li><a href="../expertise.html">Expertises</a></li><li><a href="../projects.html">Projets</a></li><li><a href="../certifications.html">Certifications</a></li>
+        <li><a href="../blog.html" aria-current="page">Blog</a></li><li><a href="../contact.html">Contact</a></li>
+      </ul>
+      <a href="../contact.html" class="btn btn-primary btn-block nav-cta-mobile">Me contacter</a>
+    </nav>
+    <div class="header-actions">
+      <a href="../contact.html" class="btn btn-primary btn-nav-cta">Me contacter</a>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="main-nav" aria-label="Ouvrir le menu de navigation"><span class="nav-toggle-icon"></span></button>
+    </div>
+  </div>
+</header>
+<div class="reading-progress"></div>
+<main id="main-content">
+  <section class="article-header">
+    <div class="container">
+      <ol class="breadcrumbs"><li><a href="../index.html">Accueil</a></li><li><a href="../blog.html">Blog</a></li><li>Scheduled Jobs</li></ol>
+      <span class="tag">ServiceNow</span>
+      <h1>Scheduled Jobs dans ServiceNow : automatiser les tâches récurrentes</h1>
+      <div class="article-title-meta"><span>Par Taoufik Gassem</span><span>Publié le 15 octobre 2025</span><span>Mis à jour le 15 octobre 2025</span><span>7 min de lecture</span></div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container article-layout">
+      <nav class="article-toc" aria-label="Sommaire de l'article">
+        <h2>Sommaire</h2>
+        <ol>
+          <li><a href="#quest-ce-sj">Qu'est-ce qu'un Scheduled Job</a></li>
+          <li><a href="#usages-sj">Usages typiques</a></li>
+          <li><a href="#planification">Bien planifier l'exécution</a></li>
+          <li><a href="#surveillance-sj">Surveiller les exécutions</a></li>
+          <li><a href="#checklist">Checklist Scheduled Jobs</a></li>
+          <li><a href="#conclusion">Conclusion</a></li>
+        </ol>
+      </nav>
+      <article class="article-body">
+        <p>Les Scheduled Jobs (tâches planifiées) permettent d'automatiser dans ServiceNow des traitements récurrents, exécutés à intervalle régulier sans intervention manuelle : nettoyage de données, envoi de rapports, synchronisations périodiques.</p>
+
+        <h2 id="quest-ce-sj">Qu'est-ce qu'un Scheduled Job</h2>
+        <p>Un Scheduled Job est un script serveur configuré pour s'exécuter selon une planification définie : une fois, quotidiennement, hebdomadairement, ou selon une expression de récurrence plus complexe. Il est particulièrement adapté aux traitements qui n'ont pas besoin d'être déclenchés par une action utilisateur.</p>
+
+        <h2 id="usages-sj">Usages typiques</h2>
+        <p>Les Scheduled Jobs sont couramment utilisés pour archiver des enregistrements anciens, recalculer des indicateurs agrégés, envoyer des rapports périodiques par email, ou synchroniser des données avec un système externe à intervalle régulier.</p>
+        <h3>Lien avec la gestion de la rétention</h3>
+        <p>Certains Scheduled Jobs jouent un rôle dans la gestion de la rétention et de l'archivage des données, un sujet lié à la performance de l'instance, développé dans l'article <a href="article-48.html">Analyser la performance d'une instance ServiceNow</a>.</p>
+
+        <h2 id="planification">Bien planifier l'exécution</h2>
+        <p>La fréquence et l'horaire d'exécution d'un Scheduled Job doivent être choisis avec soin : une exécution trop fréquente peut solliciter inutilement la plateforme, tandis qu'une exécution mal planifiée peut entrer en conflit avec d'autres traitements lourds programmés à un horaire similaire.</p>
+
+        <h2 id="surveillance-sj">Surveiller les exécutions</h2>
+        <p>Il est important de surveiller régulièrement l'exécution des Scheduled Jobs critiques : durée d'exécution, éventuelles erreurs, impact sur la performance générale de l'instance. Un job qui échoue silencieusement pendant plusieurs semaines peut passer inaperçu tout en dégradant progressivement la qualité des données.</p>
+
+        <h2 id="checklist">Checklist Scheduled Jobs</h2>
+        <ul class="article-checklist">
+          <li>Chaque Scheduled Job a un objectif clairement documenté.</li>
+          <li>La fréquence d'exécution est adaptée au besoin réel, ni trop fréquente ni trop rare.</li>
+          <li>Les horaires d'exécution évitent les conflits avec d'autres traitements lourds.</li>
+          <li>Les exécutions sont surveillées régulièrement pour détecter les échecs silencieux.</li>
+        </ul>
+
+        <blockquote>Un Scheduled Job qui échoue sans alerte peut dégrader la qualité des données pendant longtemps avant d'être détecté.</blockquote>
+
+        <h2 id="conclusion">Conclusion</h2>
+        <p>Les Scheduled Jobs sont un outil précieux pour automatiser des traitements récurrents dans ServiceNow, à condition d'être planifiés avec soin et surveillés régulièrement pour garantir leur fiabilité dans la durée.</p>
+
+        <div class="article-cta"><p><strong>Vous automatisez des traitements récurrents sur une instance ServiceNow ?</strong> <a href="../contact.html">Échangeons</a>.</p></div>
+
+        <div class="article-share">
+          <button class="btn btn-outline btn-sm" data-copy-link>Copier le lien de l'article</button>
+          <a class="btn btn-outline btn-sm" href="https://www.linkedin.com/sharing/share-offsite/?url=https://taoufikgassem.arena.site/blog/scheduled-jobs-servicenow.html" target="_blank" rel="noopener noreferrer">Partager sur LinkedIn</a>
+        </div>
+
+        <nav class="article-nav" aria-label="Navigation entre articles">
+          <a href="article-40.html"><span class="nav-label">Article précédent</span>UI Actions dans ServiceNow</a>
+          <a href="article-42.html" class="next"><span class="nav-label">Article suivant</span>Comprendre les ACL dans ServiceNow</a>
+        </nav>
+
+        <div class="related-articles">
+          <h2>Articles liés</h2>
+          <div class="grid grid-3">
+            <div class="card"><h3><a href="article-48.html">Analyser la performance d'une instance ServiceNow</a></h3></div>
+            <div class="card"><h3><a href="article-37.html">Business Rules dans ServiceNow</a></h3></div>
+            <div class="card"><h3><a href="article-47.html">Qualité des données CMDB dans ServiceNow</a></h3></div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><h3>Taoufik GASSEM</h3><p>Technical Project Manager - Embedded Systems.</p><p><a href="https://www.linkedin.com/in/taoufik-g-387964129/" target="_blank" rel="noopener noreferrer">LinkedIn →</a></p></div>
+      <div class="footer-col"><h4>Navigation</h4><ul><li><a href="../index.html">Accueil</a></li><li><a href="../about.html">À propos</a></li><li><a href="../experience.html">Expérience</a></li></ul></div>
+      <div class="footer-col"><h4>Ressources</h4><ul><li><a href="../blog.html">Blog</a></li><li><a href="../contact.html">Contact</a></li><li><a href="../privacy.html">Confidentialité</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© <span data-current-year></span> Taoufik GASSEM — Tous droits réservés.</span><span>Technical Project Manager - Embedded Systems</span></div>
+  </div>
+</footer>
+<button class="back-to-top" aria-label="Retour en haut de page">↑</button>
+<script src="../js/main.js" defer></script>
+</body>
+</html>

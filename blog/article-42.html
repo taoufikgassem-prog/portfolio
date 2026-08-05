@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Comprendre les ACL dans ServiceNow | Blog Taoufik Gassem</title>
+<meta name="description" content="Principes fondamentaux des ACL (Access Control Lists) dans ServiceNow pour sécuriser l'accès aux données.">
+<link rel="canonical" href="https://taoufikgassem.arena.site/blog/acl-servicenow.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Comprendre les ACL dans ServiceNow">
+<meta property="og:description" content="Principes fondamentaux des ACL (Access Control Lists) dans ServiceNow pour sécuriser l'accès aux données.">
+<meta property="og:image" content="https://taoufikgassem.arena.site/assets/images/taoufik-gassem-technical-project-manager.webp">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/responsive.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","headline":"Comprendre les ACL dans ServiceNow","datePublished":"2025-10-22","dateModified":"2025-10-22","author":{"@type":"Person","name":"Taoufik GASSEM"},"image":"https://taoufikgassem.arena.site/assets/images/taoufik-gassem-technical-project-manager.webp","mainEntityOfPage":"https://taoufikgassem.arena.site/blog/acl-servicenow.html"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://taoufikgassem.arena.site/index.html"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://taoufikgassem.arena.site/blog.html"},{"@type":"ListItem","position":3,"name":"ACL ServiceNow","item":"https://taoufikgassem.arena.site/blog/acl-servicenow.html"}]}
+</script>
+</head>
+<body data-page="blog">
+<a class="skip-link" href="#main-content">Aller au contenu principal</a>
+<div class="nav-backdrop"></div>
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="../index.html" class="logo" aria-label="Taoufik Gassem - Accueil"><span class="logo-mark" aria-hidden="true">TG</span><span class="logo-full">Taoufik GASSEM</span></a>
+    <nav class="main-nav" id="main-nav" aria-label="Navigation principale">
+      <ul>
+        <li><a href="../index.html">Accueil</a></li><li><a href="../about.html">À propos</a></li><li><a href="../experience.html">Expérience</a></li>
+        <li><a href="../expertise.html">Expertises</a></li><li><a href="../projects.html">Projets</a></li><li><a href="../certifications.html">Certifications</a></li>
+        <li><a href="../blog.html" aria-current="page">Blog</a></li><li><a href="../contact.html">Contact</a></li>
+      </ul>
+      <a href="../contact.html" class="btn btn-primary btn-block nav-cta-mobile">Me contacter</a>
+    </nav>
+    <div class="header-actions">
+      <a href="../contact.html" class="btn btn-primary btn-nav-cta">Me contacter</a>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="main-nav" aria-label="Ouvrir le menu de navigation"><span class="nav-toggle-icon"></span></button>
+    </div>
+  </div>
+</header>
+<div class="reading-progress"></div>
+<main id="main-content">
+  <section class="article-header">
+    <div class="container">
+      <ol class="breadcrumbs"><li><a href="../index.html">Accueil</a></li><li><a href="../blog.html">Blog</a></li><li>ACL ServiceNow</li></ol>
+      <span class="tag">ServiceNow</span>
+      <h1>Comprendre les ACL dans ServiceNow</h1>
+      <div class="article-title-meta"><span>Par Taoufik Gassem</span><span>Publié le 22 octobre 2025</span><span>Mis à jour le 22 octobre 2025</span><span>8 min de lecture</span></div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container article-layout">
+      <nav class="article-toc" aria-label="Sommaire de l'article">
+        <h2>Sommaire</h2>
+        <ol>
+          <li><a href="#quest-ce-acl">Qu'est-ce qu'une ACL</a></li>
+          <li><a href="#niveaux-acl">Les niveaux de contrôle</a></li>
+          <li><a href="#conditions-acl">Conditions et scripts</a></li>
+          <li><a href="#bonnes-pratiques-acl">Bonnes pratiques de sécurité</a></li>
+          <li><a href="#checklist">Checklist ACL</a></li>
+          <li><a href="#conclusion">Conclusion</a></li>
+        </ol>
+      </nav>
+      <article class="article-body">
+        <p>Les ACL (Access Control Lists) constituent le mécanisme central de sécurisation des données dans ServiceNow. Elles déterminent qui peut lire, créer, modifier ou supprimer un enregistrement ou un champ donné.</p>
+
+        <h2 id="quest-ce-acl">Qu'est-ce qu'une ACL</h2>
+        <p>Une ACL définit une règle d'autorisation appliquée à une table, un champ ou une action spécifique (lecture, création, modification, suppression). Elle peut s'appuyer sur des rôles, des conditions sur les données, ou des scripts personnalisés pour déterminer si un utilisateur donné est autorisé à effectuer l'opération demandée.</p>
+
+        <h2 id="niveaux-acl">Les niveaux de contrôle</h2>
+        <p>Les ACL peuvent s'appliquer à différents niveaux : au niveau d'une table entière, d'un champ spécifique, ou d'une opération particulière. Cette granularité permet de construire des politiques de sécurité fines, par exemple en autorisant la lecture d'un enregistrement tout en restreignant la modification de certains champs sensibles.</p>
+
+        <h2 id="conditions-acl">Conditions et scripts</h2>
+        <p>Au-delà des rôles, une ACL peut intégrer des conditions basées sur les données de l'enregistrement, ou un script personnalisé pour des logiques d'autorisation plus complexes, par exemple autoriser la modification uniquement si l'utilisateur est l'auteur original de l'enregistrement.</p>
+        <h3>Le rôle de GlideRecordSecure</h3>
+        <p>Les vérifications d'ACL s'appliquent automatiquement lors de l'utilisation de GlideRecordSecure côté serveur, garantissant que les scripts respectent les mêmes règles de sécurité que l'interface utilisateur standard. Ce sujet est approfondi dans l'article <a href="article-43.html">GlideRecordSecure et la sécurité des données dans ServiceNow</a>.</p>
+
+        <h2 id="bonnes-pratiques-acl">Bonnes pratiques de sécurité</h2>
+        <p>Une bonne pratique consiste à appliquer le principe du moindre privilège : accorder uniquement les accès strictement nécessaires à chaque rôle, et tester régulièrement les ACL avec des comptes représentatifs des différents profils d'utilisateurs pour vérifier qu'elles produisent le comportement attendu.</p>
+
+        <h2 id="checklist">Checklist ACL</h2>
+        <ul class="article-checklist">
+          <li>Chaque table et champ sensible dispose d'une ACL adaptée à sa criticité.</li>
+          <li>Le principe du moindre privilège guide la définition des rôles et des accès.</li>
+          <li>Les ACL sont testées avec des comptes représentatifs des différents profils d'utilisateurs.</li>
+          <li>Les scripts d'ACL complexes sont documentés pour faciliter leur maintenance.</li>
+        </ul>
+
+        <blockquote>Une ACL mal configurée peut soit exposer des données sensibles, soit bloquer injustement des utilisateurs légitimes : les deux méritent la même rigueur de test.</blockquote>
+
+        <h2 id="conclusion">Conclusion</h2>
+        <p>Les ACL sont un pilier essentiel de la sécurité des données dans ServiceNow. Leur configuration mérite une attention particulière et des tests réguliers, afin de garantir un accès approprié aux données pour chaque profil d'utilisateur.</p>
+
+        <div class="article-cta"><p><strong>Vous sécurisez l'accès aux données d'une instance ServiceNow ?</strong> <a href="../contact.html">Échangeons</a>.</p></div>
+
+        <div class="article-share">
+          <button class="btn btn-outline btn-sm" data-copy-link>Copier le lien de l'article</button>
+          <a class="btn btn-outline btn-sm" href="https://www.linkedin.com/sharing/share-offsite/?url=https://taoufikgassem.arena.site/blog/acl-servicenow.html" target="_blank" rel="noopener noreferrer">Partager sur LinkedIn</a>
+        </div>
+
+        <nav class="article-nav" aria-label="Navigation entre articles">
+          <a href="article-41.html"><span class="nav-label">Article précédent</span>Scheduled Jobs dans ServiceNow</a>
+          <a href="article-43.html" class="next"><span class="nav-label">Article suivant</span>GlideRecordSecure et la sécurité des données</a>
+        </nav>
+
+        <div class="related-articles">
+          <h2>Articles liés</h2>
+          <div class="grid grid-3">
+            <div class="card"><h3><a href="article-43.html">GlideRecordSecure et la sécurité des données dans ServiceNow</a></h3></div>
+            <div class="card"><h3><a href="article-37.html">Business Rules dans ServiceNow</a></h3></div>
+            <div class="card"><h3><a href="article-40.html">UI Actions dans ServiceNow</a></h3></div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><h3>Taoufik GASSEM</h3><p>Technical Project Manager - Embedded Systems.</p><p><a href="https://www.linkedin.com/in/taoufik-g-387964129/" target="_blank" rel="noopener noreferrer">LinkedIn →</a></p></div>
+      <div class="footer-col"><h4>Navigation</h4><ul><li><a href="../index.html">Accueil</a></li><li><a href="../about.html">À propos</a></li><li><a href="../experience.html">Expérience</a></li></ul></div>
+      <div class="footer-col"><h4>Ressources</h4><ul><li><a href="../blog.html">Blog</a></li><li><a href="../contact.html">Contact</a></li><li><a href="../privacy.html">Confidentialité</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© <span data-current-year></span> Taoufik GASSEM — Tous droits réservés.</span><span>Technical Project Manager - Embedded Systems</span></div>
+  </div>
+</footer>
+<button class="back-to-top" aria-label="Retour en haut de page">↑</button>
+<script src="../js/main.js" defer></script>
+</body>
+</html>

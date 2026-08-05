@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Du test haut niveau au script exécutable : HLK et LLK | Blog Taoufik Gassem</title>
+<meta name="description" content="Comprendre la différence entre un test haut niveau (HLK) et son implémentation exécutable (LLK) en automatisation.">
+<link rel="canonical" href="https://taoufikgassem.arena.site/blog/hlk-llk-automatisation-tests.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Du test haut niveau au script exécutable : comprendre HLK et LLK">
+<meta property="og:description" content="Comprendre la différence entre un test haut niveau (HLK) et son implémentation exécutable (LLK) en automatisation.">
+<meta property="og:image" content="https://taoufikgassem.arena.site/assets/images/taoufik-gassem-technical-project-manager.webp">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/responsive.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","headline":"Du test haut niveau au script exécutable : comprendre HLK et LLK","datePublished":"2025-06-25","dateModified":"2025-06-25","author":{"@type":"Person","name":"Taoufik GASSEM"},"image":"https://taoufikgassem.arena.site/assets/images/taoufik-gassem-technical-project-manager.webp","mainEntityOfPage":"https://taoufikgassem.arena.site/blog/hlk-llk-automatisation-tests.html"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://taoufikgassem.arena.site/index.html"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://taoufikgassem.arena.site/blog.html"},{"@type":"ListItem","position":3,"name":"HLK LLK","item":"https://taoufikgassem.arena.site/blog/hlk-llk-automatisation-tests.html"}]}
+</script>
+</head>
+<body data-page="blog">
+<a class="skip-link" href="#main-content">Aller au contenu principal</a>
+<div class="nav-backdrop"></div>
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="../index.html" class="logo" aria-label="Taoufik Gassem - Accueil"><span class="logo-mark" aria-hidden="true">TG</span><span class="logo-full">Taoufik GASSEM</span></a>
+    <nav class="main-nav" id="main-nav" aria-label="Navigation principale">
+      <ul>
+        <li><a href="../index.html">Accueil</a></li><li><a href="../about.html">À propos</a></li><li><a href="../experience.html">Expérience</a></li>
+        <li><a href="../expertise.html">Expertises</a></li><li><a href="../projects.html">Projets</a></li><li><a href="../certifications.html">Certifications</a></li>
+        <li><a href="../blog.html" aria-current="page">Blog</a></li><li><a href="../contact.html">Contact</a></li>
+      </ul>
+      <a href="../contact.html" class="btn btn-primary btn-block nav-cta-mobile">Me contacter</a>
+    </nav>
+    <div class="header-actions">
+      <a href="../contact.html" class="btn btn-primary btn-nav-cta">Me contacter</a>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="main-nav" aria-label="Ouvrir le menu de navigation"><span class="nav-toggle-icon"></span></button>
+    </div>
+  </div>
+</header>
+<div class="reading-progress"></div>
+<main id="main-content">
+  <section class="article-header">
+    <div class="container">
+      <ol class="breadcrumbs"><li><a href="../index.html">Accueil</a></li><li><a href="../blog.html">Blog</a></li><li>HLK LLK</li></ol>
+      <span class="tag">Automatisation des tests</span>
+      <h1>Du test haut niveau au script exécutable : comprendre HLK et LLK</h1>
+      <div class="article-title-meta"><span>Par Taoufik Gassem</span><span>Publié le 25 juin 2025</span><span>Mis à jour le 25 juin 2025</span><span>7 min de lecture</span></div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container article-layout">
+      <nav class="article-toc" aria-label="Sommaire de l'article">
+        <h2>Sommaire</h2>
+        <ol>
+          <li><a href="#hlk">Le test haut niveau (HLK)</a></li>
+          <li><a href="#llk">Le script exécutable (LLK)</a></li>
+          <li><a href="#passage">Passer du HLK au LLK</a></li>
+          <li><a href="#maintien">Maintenir la cohérence entre les deux</a></li>
+          <li><a href="#checklist">Checklist HLK/LLK</a></li>
+          <li><a href="#conclusion">Conclusion</a></li>
+        </ol>
+      </nav>
+      <article class="article-body">
+        <p>Dans l'automatisation des tests automobiles, on distingue souvent le test haut niveau (High Level Keyword, HLK), rédigé dans un langage proche du métier, et son implémentation technique exécutable (Low Level Keyword, LLK), plus proche du code. Cette séparation facilite la collaboration entre experts métier et développeurs de scripts.</p>
+
+        <h2 id="hlk">Le test haut niveau (HLK)</h2>
+        <p>Un test haut niveau décrit le scénario de test dans un langage proche de l'exigence à vérifier, compréhensible par un ingénieur de validation sans compétence particulière en programmation. Il décrit le "quoi" du test : quelles actions réaliser, dans quel ordre, avec quel résultat attendu.</p>
+
+        <h2 id="llk">Le script exécutable (LLK)</h2>
+        <p>Le script exécutable traduit ce scénario en instructions techniques concrètes, exploitables par l'outil d'automatisation (par exemple Robot Framework). Il décrit le "comment" : quelles commandes envoyer, quelles interfaces utiliser, comment interpréter les réponses du système sous test.</p>
+
+        <h2 id="passage">Passer du HLK au LLK</h2>
+        <p>La traduction d'un test haut niveau en script exécutable nécessite une bonne connaissance à la fois du scénario métier et de l'environnement technique d'exécution. Cette étape peut être facilitée par des outils de génération semi-automatique, mais nécessite toujours une vérification humaine de la cohérence du résultat.</p>
+        <h3>Un langage commun entre métier et technique</h3>
+        <p>La séparation HLK/LLK permet aux experts métier de se concentrer sur la pertinence du scénario de test, tandis que les développeurs de scripts se concentrent sur la fiabilité de son implémentation technique, sans que chacun ait besoin de maîtriser complètement le domaine de l'autre.</p>
+
+        <h2 id="maintien">Maintenir la cohérence entre les deux</h2>
+        <p>Toute évolution du scénario métier (HLK) doit être répercutée sur le script exécutable (LLK) associé, et inversement, toute contrainte technique découverte lors de l'implémentation doit être remontée pour ajuster, si nécessaire, la formulation du test haut niveau.</p>
+
+        <h2 id="checklist">Checklist HLK/LLK</h2>
+        <ul class="article-checklist">
+          <li>Chaque test haut niveau est formulé dans un langage compréhensible par les experts métier.</li>
+          <li>Le script exécutable associé est vérifié pour garantir sa cohérence avec le scénario métier.</li>
+          <li>Les évolutions de l'un des deux niveaux sont systématiquement répercutées sur l'autre.</li>
+          <li>La documentation du lien entre HLK et LLK est maintenue à jour.</li>
+        </ul>
+
+        <blockquote>Séparer le test haut niveau de son implémentation technique facilite la maintenance des suites de tests automatisées dans la durée.</blockquote>
+
+        <h2 id="conclusion">Conclusion</h2>
+        <p>La distinction entre test haut niveau et script exécutable est une bonne pratique structurante en automatisation des tests, qui facilite la collaboration entre experts métier et développeurs, tout en améliorant la maintenabilité des suites de tests sur le long terme.</p>
+
+        <div class="article-cta"><p><strong>Vous structurez une démarche d'automatisation de tests ?</strong> <a href="../contact.html">Échangeons</a>.</p></div>
+
+        <div class="article-share">
+          <button class="btn btn-outline btn-sm" data-copy-link>Copier le lien de l'article</button>
+          <a class="btn btn-outline btn-sm" href="https://www.linkedin.com/sharing/share-offsite/?url=https://taoufikgassem.arena.site/blog/hlk-llk-automatisation-tests.html" target="_blank" rel="noopener noreferrer">Partager sur LinkedIn</a>
+        </div>
+
+        <nav class="article-nav" aria-label="Navigation entre articles">
+          <a href="article-24.html"><span class="nav-label">Article précédent</span>Automatisation des tests avec Robot Framework</a>
+          <a href="article-26.html" class="next"><span class="nav-label">Article suivant</span>CAPL pour la validation automobile</a>
+        </nav>
+
+        <div class="related-articles">
+          <h2>Articles liés</h2>
+          <div class="grid grid-3">
+            <div class="card"><h3><a href="article-24.html">Automatisation des tests avec Robot Framework</a></h3></div>
+            <div class="card"><h3><a href="article-20.html">Comment rédiger des cas de test efficaces</a></h3></div>
+            <div class="card"><h3><a href="article-26.html">CAPL pour la validation automobile</a></h3></div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><h3>Taoufik GASSEM</h3><p>Technical Project Manager - Embedded Systems.</p><p><a href="https://www.linkedin.com/in/taoufik-g-387964129/" target="_blank" rel="noopener noreferrer">LinkedIn →</a></p></div>
+      <div class="footer-col"><h4>Navigation</h4><ul><li><a href="../index.html">Accueil</a></li><li><a href="../about.html">À propos</a></li><li><a href="../experience.html">Expérience</a></li></ul></div>
+      <div class="footer-col"><h4>Ressources</h4><ul><li><a href="../blog.html">Blog</a></li><li><a href="../contact.html">Contact</a></li><li><a href="../privacy.html">Confidentialité</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© <span data-current-year></span> Taoufik GASSEM — Tous droits réservés.</span><span>Technical Project Manager - Embedded Systems</span></div>
+  </div>
+</footer>
+<button class="back-to-top" aria-label="Retour en haut de page">↑</button>
+<script src="../js/main.js" defer></script>
+</body>
+</html>

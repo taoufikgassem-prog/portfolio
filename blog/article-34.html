@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Comprendre le cycle de vie d'un incident ServiceNow | Blog Taoufik Gassem</title>
+<meta name="description" content="Les états successifs d'un incident dans ServiceNow, de sa création à sa clôture, et les bonnes pratiques associées.">
+<link rel="canonical" href="https://taoufikgassem.arena.site/blog/cycle-vie-incident-servicenow.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Comprendre le cycle de vie d'un incident ServiceNow">
+<meta property="og:description" content="Les états successifs d'un incident dans ServiceNow, de sa création à sa clôture, et les bonnes pratiques associées.">
+<meta property="og:image" content="https://taoufikgassem.arena.site/assets/images/taoufik-gassem-technical-project-manager.webp">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/responsive.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","headline":"Comprendre le cycle de vie d'un incident ServiceNow","datePublished":"2025-08-27","dateModified":"2025-08-27","author":{"@type":"Person","name":"Taoufik GASSEM"},"image":"https://taoufikgassem.arena.site/assets/images/taoufik-gassem-technical-project-manager.webp","mainEntityOfPage":"https://taoufikgassem.arena.site/blog/cycle-vie-incident-servicenow.html"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://taoufikgassem.arena.site/index.html"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://taoufikgassem.arena.site/blog.html"},{"@type":"ListItem","position":3,"name":"Cycle de vie d'un incident","item":"https://taoufikgassem.arena.site/blog/cycle-vie-incident-servicenow.html"}]}
+</script>
+</head>
+<body data-page="blog">
+<a class="skip-link" href="#main-content">Aller au contenu principal</a>
+<div class="nav-backdrop"></div>
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="../index.html" class="logo" aria-label="Taoufik Gassem - Accueil"><span class="logo-mark" aria-hidden="true">TG</span><span class="logo-full">Taoufik GASSEM</span></a>
+    <nav class="main-nav" id="main-nav" aria-label="Navigation principale">
+      <ul>
+        <li><a href="../index.html">Accueil</a></li><li><a href="../about.html">À propos</a></li><li><a href="../experience.html">Expérience</a></li>
+        <li><a href="../expertise.html">Expertises</a></li><li><a href="../projects.html">Projets</a></li><li><a href="../certifications.html">Certifications</a></li>
+        <li><a href="../blog.html" aria-current="page">Blog</a></li><li><a href="../contact.html">Contact</a></li>
+      </ul>
+      <a href="../contact.html" class="btn btn-primary btn-block nav-cta-mobile">Me contacter</a>
+    </nav>
+    <div class="header-actions">
+      <a href="../contact.html" class="btn btn-primary btn-nav-cta">Me contacter</a>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="main-nav" aria-label="Ouvrir le menu de navigation"><span class="nav-toggle-icon"></span></button>
+    </div>
+  </div>
+</header>
+<div class="reading-progress"></div>
+<main id="main-content">
+  <section class="article-header">
+    <div class="container">
+      <ol class="breadcrumbs"><li><a href="../index.html">Accueil</a></li><li><a href="../blog.html">Blog</a></li><li>Cycle de vie d'un incident</li></ol>
+      <span class="tag">ServiceNow</span>
+      <h1>Comprendre le cycle de vie d'un incident ServiceNow</h1>
+      <div class="article-title-meta"><span>Par Taoufik Gassem</span><span>Publié le 27 août 2025</span><span>Mis à jour le 27 août 2025</span><span>7 min de lecture</span></div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container article-layout">
+      <nav class="article-toc" aria-label="Sommaire de l'article">
+        <h2>Sommaire</h2>
+        <ol>
+          <li><a href="#etats-standard">Les états standards</a></li>
+          <li><a href="#transitions">Gérer les transitions</a></li>
+          <li><a href="#etats-personnalises">Personnaliser les états avec discernement</a></li>
+          <li><a href="#cloture">La clôture de l'incident</a></li>
+          <li><a href="#checklist">Checklist du cycle de vie</a></li>
+          <li><a href="#conclusion">Conclusion</a></li>
+        </ol>
+      </nav>
+      <article class="article-body">
+        <p>Le cycle de vie d'un incident dans ServiceNow définit les états par lesquels celui-ci transite, de sa création jusqu'à sa clôture. Une bonne compréhension de ce cycle est indispensable pour configurer un module d'Incident Management cohérent et exploitable.</p>
+
+        <h2 id="etats-standard">Les états standards</h2>
+        <p>ServiceNow propose, par défaut, des états standards pour un incident : Nouveau, En cours, En attente, Résolu et Clôturé. Chaque état reflète une étape du traitement, et certains peuvent nécessiter des informations complémentaires, par exemple un motif de mise en attente ou un code de résolution.</p>
+
+        <h2 id="transitions">Gérer les transitions</h2>
+        <p>Les transitions entre états doivent être contrôlées pour éviter des incohérences, comme un incident clôturé sans code de résolution renseigné. Des règles métier ou des politiques d'interface utilisateur (UI Policies) permettent d'imposer ces contraintes de façon transparente pour l'utilisateur.</p>
+
+        <h2 id="etats-personnalises">Personnaliser les états avec discernement</h2>
+        <p>Il est possible d'ajouter des états personnalisés pour refléter des besoins spécifiques à une organisation. Cette personnalisation doit néanmoins rester mesurée : multiplier les états rend le processus plus difficile à comprendre pour les utilisateurs et plus complexe à maintenir dans les rapports et tableaux de bord.</p>
+        <h3>Documenter le cycle de vie choisi</h3>
+        <p>Quelle que soit la configuration retenue, il est utile de documenter clairement la signification de chaque état et les règles de transition associées, afin de faciliter la formation des nouveaux utilisateurs et la maintenance future de la configuration.</p>
+
+        <h2 id="cloture">La clôture de l'incident</h2>
+        <p>La clôture d'un incident doit s'accompagner d'informations exploitables pour l'analyse ultérieure : catégorie de résolution, temps de traitement, éventuel lien avec un problème récurrent. Ces données alimentent ensuite les rapports de performance du support.</p>
+
+        <h2 id="checklist">Checklist du cycle de vie d'un incident</h2>
+        <ul class="article-checklist">
+          <li>Les états standards sont utilisés autant que possible avant d'envisager une personnalisation.</li>
+          <li>Les transitions critiques (par exemple la clôture) sont encadrées par des règles ou des politiques d'interface.</li>
+          <li>Chaque état personnalisé ajouté est documenté et justifié par un besoin réel.</li>
+          <li>Les informations de clôture sont exploitables pour l'analyse de performance du support.</li>
+        </ul>
+
+        <blockquote>Un cycle de vie d'incident trop complexe finit par nuire à la qualité des données qu'il est censé structurer.</blockquote>
+
+        <h2 id="conclusion">Conclusion</h2>
+        <p>Le cycle de vie d'un incident ServiceNow doit rester lisible et cohérent, en s'appuyant sur les états standards autant que possible. Une personnalisation mesurée et bien documentée permet d'adapter le processus aux besoins réels sans complexifier inutilement la configuration.</p>
+
+        <div class="article-cta"><p><strong>Vous configurez un cycle de vie d'incident sur mesure ?</strong> <a href="../contact.html">Échangeons</a>.</p></div>
+
+        <div class="article-share">
+          <button class="btn btn-outline btn-sm" data-copy-link>Copier le lien de l'article</button>
+          <a class="btn btn-outline btn-sm" href="https://www.linkedin.com/sharing/share-offsite/?url=https://taoufikgassem.arena.site/blog/cycle-vie-incident-servicenow.html" target="_blank" rel="noopener noreferrer">Partager sur LinkedIn</a>
+        </div>
+
+        <nav class="article-nav" aria-label="Navigation entre articles">
+          <a href="article-33.html"><span class="nav-label">Article précédent</span>Configurer la gestion des incidents dans ServiceNow</a>
+          <a href="article-35.html" class="next"><span class="nav-label">Article suivant</span>Définir un modèle de priorité et de SLA dans ServiceNow</a>
+        </nav>
+
+        <div class="related-articles">
+          <h2>Articles liés</h2>
+          <div class="grid grid-3">
+            <div class="card"><h3><a href="article-33.html">Configurer la gestion des incidents dans ServiceNow</a></h3></div>
+            <div class="card"><h3><a href="article-38.html">Client Scripts et UI Policies dans ServiceNow</a></h3></div>
+            <div class="card"><h3><a href="article-35.html">Définir un modèle de priorité et de SLA</a></h3></div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><h3>Taoufik GASSEM</h3><p>Technical Project Manager - Embedded Systems.</p><p><a href="https://www.linkedin.com/in/taoufik-g-387964129/" target="_blank" rel="noopener noreferrer">LinkedIn →</a></p></div>
+      <div class="footer-col"><h4>Navigation</h4><ul><li><a href="../index.html">Accueil</a></li><li><a href="../about.html">À propos</a></li><li><a href="../experience.html">Expérience</a></li></ul></div>
+      <div class="footer-col"><h4>Ressources</h4><ul><li><a href="../blog.html">Blog</a></li><li><a href="../contact.html">Contact</a></li><li><a href="../privacy.html">Confidentialité</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© <span data-current-year></span> Taoufik GASSEM — Tous droits réservés.</span><span>Technical Project Manager - Embedded Systems</span></div>
+  </div>
+</footer>
+<button class="back-to-top" aria-label="Retour en haut de page">↑</button>
+<script src="../js/main.js" defer></script>
+</body>
+</html>

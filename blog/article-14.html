@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Architecture fonctionnelle automobile : principes et bonnes pratiques | Blog Taoufik Gassem</title>
+<meta name="description" content="Les fondamentaux d'une architecture fonctionnelle automobile robuste, claire et évolutive.">
+<link rel="canonical" href="https://taoufikgassem.arena.site/blog/architecture-fonctionnelle-automobile.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Architecture fonctionnelle automobile : principes et bonnes pratiques">
+<meta property="og:description" content="Les fondamentaux d'une architecture fonctionnelle automobile robuste, claire et évolutive.">
+<meta property="og:image" content="https://taoufikgassem.arena.site/assets/images/taoufik-gassem-technical-project-manager.webp">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/responsive.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","headline":"Architecture fonctionnelle automobile : principes et bonnes pratiques","datePublished":"2025-04-09","dateModified":"2025-04-09","author":{"@type":"Person","name":"Taoufik GASSEM"},"image":"https://taoufikgassem.arena.site/assets/images/taoufik-gassem-technical-project-manager.webp","mainEntityOfPage":"https://taoufikgassem.arena.site/blog/architecture-fonctionnelle-automobile.html"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://taoufikgassem.arena.site/index.html"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://taoufikgassem.arena.site/blog.html"},{"@type":"ListItem","position":3,"name":"Architecture fonctionnelle","item":"https://taoufikgassem.arena.site/blog/architecture-fonctionnelle-automobile.html"}]}
+</script>
+</head>
+<body data-page="blog">
+<a class="skip-link" href="#main-content">Aller au contenu principal</a>
+<div class="nav-backdrop"></div>
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="../index.html" class="logo" aria-label="Taoufik Gassem - Accueil"><span class="logo-mark" aria-hidden="true">TG</span><span class="logo-full">Taoufik GASSEM</span></a>
+    <nav class="main-nav" id="main-nav" aria-label="Navigation principale">
+      <ul>
+        <li><a href="../index.html">Accueil</a></li><li><a href="../about.html">À propos</a></li><li><a href="../experience.html">Expérience</a></li>
+        <li><a href="../expertise.html">Expertises</a></li><li><a href="../projects.html">Projets</a></li><li><a href="../certifications.html">Certifications</a></li>
+        <li><a href="../blog.html" aria-current="page">Blog</a></li><li><a href="../contact.html">Contact</a></li>
+      </ul>
+      <a href="../contact.html" class="btn btn-primary btn-block nav-cta-mobile">Me contacter</a>
+    </nav>
+    <div class="header-actions">
+      <a href="../contact.html" class="btn btn-primary btn-nav-cta">Me contacter</a>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="main-nav" aria-label="Ouvrir le menu de navigation"><span class="nav-toggle-icon"></span></button>
+    </div>
+  </div>
+</header>
+<div class="reading-progress"></div>
+<main id="main-content">
+  <section class="article-header">
+    <div class="container">
+      <ol class="breadcrumbs"><li><a href="../index.html">Accueil</a></li><li><a href="../blog.html">Blog</a></li><li>Architecture fonctionnelle</li></ol>
+      <span class="tag">Ingénierie système</span>
+      <h1>Architecture fonctionnelle automobile : principes et bonnes pratiques</h1>
+      <div class="article-title-meta"><span>Par Taoufik Gassem</span><span>Publié le 9 avril 2025</span><span>Mis à jour le 9 avril 2025</span><span>9 min de lecture</span></div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container article-layout">
+      <nav class="article-toc" aria-label="Sommaire de l'article">
+        <h2>Sommaire</h2>
+        <ol>
+          <li><a href="#definition-arch">Qu'est-ce qu'une architecture fonctionnelle</a></li>
+          <li><a href="#decomposition">Décomposer les fonctions</a></li>
+          <li><a href="#interfaces">Définir les interfaces</a></li>
+          <li><a href="#evolutivite">Concevoir pour l'évolutivité</a></li>
+          <li><a href="#checklist">Checklist d'architecture fonctionnelle</a></li>
+          <li><a href="#conclusion">Conclusion</a></li>
+        </ol>
+      </nav>
+      <article class="article-body">
+        <p>L'architecture fonctionnelle d'un système automobile décrit la manière dont les fonctions attendues sont réparties entre les différents composants du système, indépendamment de leur implémentation technologique précise. C'est une étape charnière entre les exigences et la conception détaillée.</p>
+
+        <h2 id="definition-arch">Qu'est-ce qu'une architecture fonctionnelle</h2>
+        <p>Une architecture fonctionnelle décrit le "quoi" et le "qui fait quoi" d'un système, avant de descendre dans le "comment" technique. Elle permet de raisonner sur la cohérence globale du système avant que les choix technologiques ne figent certaines options.</p>
+
+        <h2 id="decomposition">Décomposer les fonctions</h2>
+        <p>La décomposition fonctionnelle consiste à identifier les grandes fonctions attendues du système, puis à les affiner progressivement en sous-fonctions, jusqu'à un niveau de détail exploitable pour la conception. Par exemple, un système d'accès mains libres peut être décomposé en fonctions de détection de présence, d'authentification et de commande de verrouillage.</p>
+        <p>Ce type de décomposition est présenté, à un niveau générique, dans l'étude de cas <a href="../projects.html#case-hands-free">Ingénierie système d'un système d'accès mains libres</a>.</p>
+
+        <h2 id="interfaces">Définir les interfaces</h2>
+        <p>Les interfaces entre fonctions, qu'elles soient matérielles, logicielles ou de communication (par exemple via un bus CAN), doivent être définies avec précision : nature des données échangées, fréquence, contraintes temporelles. Une interface mal spécifiée est une source fréquente d'incompatibilité entre composants développés par des équipes ou fournisseurs différents.</p>
+        <h3>Le rôle des contrôles d'impédance et du tuning</h3>
+        <p>Sur les systèmes intégrant des interfaces radiofréquence, des contrôles d'impédance et des phases de réglage (tuning) permettent de vérifier que les caractéristiques physiques réelles du système correspondent aux hypothèses de l'architecture fonctionnelle.</p>
+
+        <h2 id="evolutivite">Concevoir pour l'évolutivité</h2>
+        <p>Une architecture fonctionnelle robuste anticipe, dans une certaine mesure, les évolutions futures du système : ajout de fonctions, changement de fournisseur sur un composant, montée en gamme. Cette anticipation limite les refontes coûteuses lors des évolutions successives du produit.</p>
+
+        <h2 id="checklist">Checklist d'architecture fonctionnelle</h2>
+        <ul class="article-checklist">
+          <li>Les fonctions principales du système sont clairement identifiées et documentées.</li>
+          <li>Les interfaces entre fonctions sont spécifiées avec précision.</li>
+          <li>L'architecture reste indépendante des choix technologiques tant que possible.</li>
+          <li>Les évolutions futures probables sont anticipées dans la structuration de l'architecture.</li>
+        </ul>
+
+        <blockquote>Une bonne architecture fonctionnelle rend les choix technologiques ultérieurs plus simples, pas plus complexes.</blockquote>
+
+        <h2 id="conclusion">Conclusion</h2>
+        <p>L'architecture fonctionnelle est le pont entre les exigences d'un système automobile et sa conception détaillée. Une architecture bien pensée facilite l'intégration, la validation et l'évolution future du système.</p>
+
+        <div class="article-cta"><p><strong>Vous concevez l'architecture d'un système automobile complexe ?</strong> <a href="../contact.html">Échangeons sur votre projet</a>.</p></div>
+
+        <div class="article-share">
+          <button class="btn btn-outline btn-sm" data-copy-link>Copier le lien de l'article</button>
+          <a class="btn btn-outline btn-sm" href="https://www.linkedin.com/sharing/share-offsite/?url=https://taoufikgassem.arena.site/blog/architecture-fonctionnelle-automobile.html" target="_blank" rel="noopener noreferrer">Partager sur LinkedIn</a>
+        </div>
+
+        <nav class="article-nav" aria-label="Navigation entre articles">
+          <a href="article-13.html"><span class="nav-label">Article précédent</span>Configuration système et maturité projet dans le développement automobile</a>
+          <a href="article-15.html" class="next"><span class="nav-label">Article suivant</span>Intégration hardware et software dans un calculateur automobile</a>
+        </nav>
+
+        <div class="related-articles">
+          <h2>Articles liés</h2>
+          <div class="grid grid-3">
+            <div class="card"><h3><a href="article-11.html">Ingénierie système : de l'exigence à la validation</a></h3></div>
+            <div class="card"><h3><a href="article-16.html">Communication CAN et diagnostic ECU</a></h3></div>
+            <div class="card"><h3><a href="../projects.html#case-hands-free">Étude de cas : accès mains libres</a></h3></div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><h3>Taoufik GASSEM</h3><p>Technical Project Manager - Embedded Systems.</p><p><a href="https://www.linkedin.com/in/taoufik-g-387964129/" target="_blank" rel="noopener noreferrer">LinkedIn →</a></p></div>
+      <div class="footer-col"><h4>Navigation</h4><ul><li><a href="../index.html">Accueil</a></li><li><a href="../about.html">À propos</a></li><li><a href="../experience.html">Expérience</a></li></ul></div>
+      <div class="footer-col"><h4>Ressources</h4><ul><li><a href="../blog.html">Blog</a></li><li><a href="../contact.html">Contact</a></li><li><a href="../privacy.html">Confidentialité</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© <span data-current-year></span> Taoufik GASSEM — Tous droits réservés.</span><span>Technical Project Manager - Embedded Systems</span></div>
+  </div>
+</footer>
+<button class="back-to-top" aria-label="Retour en haut de page">↑</button>
+<script src="../js/main.js" defer></script>
+</body>
+</html>

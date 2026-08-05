@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://taoufikgassem.arena.site/sitemap.xml

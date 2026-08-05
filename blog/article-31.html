@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Qu'est-ce que ServiceNow ITSM : vue d'ensemble | Blog Taoufik Gassem</title>
+<meta name="description" content="Panorama de la plateforme ServiceNow ITSM : modules clés, cas d'usage et principes fondamentaux de la gestion des services IT.">
+<link rel="canonical" href="https://taoufikgassem.arena.site/blog/apercu-servicenow-itsm.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Qu'est-ce que ServiceNow ITSM : vue d'ensemble">
+<meta property="og:description" content="Panorama de la plateforme ServiceNow ITSM : modules clés, cas d'usage et principes fondamentaux de la gestion des services IT.">
+<meta property="og:image" content="https://taoufikgassem.arena.site/assets/images/taoufik-gassem-technical-project-manager.webp">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/responsive.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","headline":"Qu'est-ce que ServiceNow ITSM : vue d'ensemble","datePublished":"2025-08-06","dateModified":"2025-08-06","author":{"@type":"Person","name":"Taoufik GASSEM"},"image":"https://taoufikgassem.arena.site/assets/images/taoufik-gassem-technical-project-manager.webp","mainEntityOfPage":"https://taoufikgassem.arena.site/blog/apercu-servicenow-itsm.html"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://taoufikgassem.arena.site/index.html"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://taoufikgassem.arena.site/blog.html"},{"@type":"ListItem","position":3,"name":"Aperçu ServiceNow ITSM","item":"https://taoufikgassem.arena.site/blog/apercu-servicenow-itsm.html"}]}
+</script>
+</head>
+<body data-page="blog">
+<a class="skip-link" href="#main-content">Aller au contenu principal</a>
+<div class="nav-backdrop"></div>
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="../index.html" class="logo" aria-label="Taoufik Gassem - Accueil"><span class="logo-mark" aria-hidden="true">TG</span><span class="logo-full">Taoufik GASSEM</span></a>
+    <nav class="main-nav" id="main-nav" aria-label="Navigation principale">
+      <ul>
+        <li><a href="../index.html">Accueil</a></li><li><a href="../about.html">À propos</a></li><li><a href="../experience.html">Expérience</a></li>
+        <li><a href="../expertise.html">Expertises</a></li><li><a href="../projects.html">Projets</a></li><li><a href="../certifications.html">Certifications</a></li>
+        <li><a href="../blog.html" aria-current="page">Blog</a></li><li><a href="../contact.html">Contact</a></li>
+      </ul>
+      <a href="../contact.html" class="btn btn-primary btn-block nav-cta-mobile">Me contacter</a>
+    </nav>
+    <div class="header-actions">
+      <a href="../contact.html" class="btn btn-primary btn-nav-cta">Me contacter</a>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="main-nav" aria-label="Ouvrir le menu de navigation"><span class="nav-toggle-icon"></span></button>
+    </div>
+  </div>
+</header>
+<div class="reading-progress"></div>
+<main id="main-content">
+  <section class="article-header">
+    <div class="container">
+      <ol class="breadcrumbs"><li><a href="../index.html">Accueil</a></li><li><a href="../blog.html">Blog</a></li><li>Aperçu ServiceNow ITSM</li></ol>
+      <span class="tag">ServiceNow</span>
+      <h1>Qu'est-ce que ServiceNow ITSM : vue d'ensemble</h1>
+      <div class="article-title-meta"><span>Par Taoufik Gassem</span><span>Publié le 6 août 2025</span><span>Mis à jour le 6 août 2025</span><span>8 min de lecture</span></div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container article-layout">
+      <nav class="article-toc" aria-label="Sommaire de l'article">
+        <h2>Sommaire</h2>
+        <ol>
+          <li><a href="#quest-ce-itsm">Qu'est-ce que l'ITSM</a></li>
+          <li><a href="#plateforme">La plateforme ServiceNow</a></li>
+          <li><a href="#modules">Les modules ITSM clés</a></li>
+          <li><a href="#pourquoi-servicenow">Pourquoi ServiceNow est largement adopté</a></li>
+          <li><a href="#checklist">Checklist de découverte</a></li>
+          <li><a href="#conclusion">Conclusion</a></li>
+        </ol>
+      </nav>
+      <article class="article-body">
+        <p>ServiceNow est une plateforme largement utilisée pour la gestion des services informatiques (ITSM, IT Service Management). Cet article propose une vue d'ensemble des concepts fondamentaux de l'ITSM et de la manière dont ServiceNow les met en œuvre.</p>
+
+        <p>Les éléments présentés ici s'appuient notamment sur une pratique personnelle de la plateforme, menée sur une instance personnelle, hors environnement client de production, décrite plus en détail sur la page <a href="../projects.html#servicenow">Projets personnels ServiceNow</a>.</p>
+
+        <h2 id="quest-ce-itsm">Qu'est-ce que l'ITSM</h2>
+        <p>L'ITSM désigne l'ensemble des pratiques permettant de concevoir, fournir, gérer et améliorer la façon dont les services informatiques sont délivrés aux utilisateurs d'une organisation. Elle s'appuie généralement sur des référentiels comme ITIL, qui définissent des processus structurés : gestion des incidents, des problèmes, des changements, des demandes de service, entre autres.</p>
+
+        <h2 id="plateforme">La plateforme ServiceNow</h2>
+        <p>ServiceNow est une plateforme cloud qui propose des applications préconstruites pour couvrir ces processus ITSM, tout en offrant des capacités de personnalisation avancées : scripting serveur et client, workflows, formulaires dynamiques, portails en libre-service. Cette flexibilité explique en partie sa popularité dans des organisations de tailles très variées.</p>
+
+        <h2 id="modules">Les modules ITSM clés</h2>
+        <p>Parmi les modules les plus utilisés de ServiceNow ITSM figurent la gestion des incidents (Incident Management), la gestion des problèmes (Problem Management), la gestion des changements (Change Management), la gestion des demandes de service (Service Catalog / Request Management) et la base de données de gestion de configuration (CMDB). Chacun de ces modules répond à un besoin précis du cycle de vie des services IT.</p>
+        <h3>Un socle commun : la CMDB</h3>
+        <p>La CMDB (Configuration Management Database) joue un rôle central : elle recense les éléments de configuration (serveurs, applications, services) et leurs relations, ce qui permet d'évaluer l'impact d'un incident ou d'un changement sur l'ensemble du système d'information. Ce sujet est approfondi dans l'article <a href="article-47.html">Qualité des données CMDB dans ServiceNow</a>.</p>
+
+        <h2 id="pourquoi-servicenow">Pourquoi ServiceNow est largement adopté</h2>
+        <p>Au-delà de la couverture fonctionnelle de ses modules, ServiceNow se distingue par une architecture unifiée : les différents modules partagent le même modèle de données et la même plateforme de développement, ce qui facilite l'intégration entre processus (par exemple, relier un incident à un changement ou à un élément de configuration).</p>
+
+        <h2 id="checklist">Checklist de découverte de ServiceNow ITSM</h2>
+        <ul class="article-checklist">
+          <li>Les processus ITSM de base (incidents, problèmes, changements, demandes) sont identifiés.</li>
+          <li>Le rôle central de la CMDB dans la plateforme est compris.</li>
+          <li>Les possibilités de personnalisation (scripting, workflows, portails) sont explorées progressivement.</li>
+          <li>Une instance de découverte ou personnelle permet de manipuler les concepts avant toute mise en production.</li>
+        </ul>
+
+        <blockquote>Comprendre l'architecture unifiée de ServiceNow aide à exploiter pleinement la cohérence entre ses différents modules ITSM.</blockquote>
+
+        <h2 id="conclusion">Conclusion</h2>
+        <p>ServiceNow ITSM combine des pratiques éprouvées de gestion des services IT avec une plateforme technique unifiée et personnalisable. Cette vue d'ensemble sert de point de départ pour explorer plus en détail chacun de ses modules, à commencer par la gestion des incidents.</p>
+
+        <div class="article-cta"><p><strong>Vous souhaitez échanger sur une pratique ServiceNow ou un projet technique ?</strong> <a href="../contact.html">Échangeons</a> ou consultez la page <a href="../projects.html#servicenow">Projets personnels ServiceNow</a>.</p></div>
+
+        <div class="article-share">
+          <button class="btn btn-outline btn-sm" data-copy-link>Copier le lien de l'article</button>
+          <a class="btn btn-outline btn-sm" href="https://www.linkedin.com/sharing/share-offsite/?url=https://taoufikgassem.arena.site/blog/apercu-servicenow-itsm.html" target="_blank" rel="noopener noreferrer">Partager sur LinkedIn</a>
+        </div>
+
+        <nav class="article-nav" aria-label="Navigation entre articles">
+          <span></span>
+          <a href="article-32.html" class="next"><span class="nav-label">Article suivant</span>Devenir ServiceNow Certified System Administrator (CSA)</a>
+        </nav>
+
+        <div class="related-articles">
+          <h2>Articles liés</h2>
+          <div class="grid grid-3">
+            <div class="card"><h3><a href="article-33.html">Configurer la gestion des incidents dans ServiceNow</a></h3></div>
+            <div class="card"><h3><a href="article-47.html">Qualité des données CMDB dans ServiceNow</a></h3></div>
+            <div class="card"><h3><a href="../projects.html#servicenow">Projets personnels ServiceNow</a></h3></div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><h3>Taoufik GASSEM</h3><p>Technical Project Manager - Embedded Systems.</p><p><a href="https://www.linkedin.com/in/taoufik-g-387964129/" target="_blank" rel="noopener noreferrer">LinkedIn →</a></p></div>
+      <div class="footer-col"><h4>Navigation</h4><ul><li><a href="../index.html">Accueil</a></li><li><a href="../about.html">À propos</a></li><li><a href="../experience.html">Expérience</a></li></ul></div>
+      <div class="footer-col"><h4>Ressources</h4><ul><li><a href="../blog.html">Blog</a></li><li><a href="../contact.html">Contact</a></li><li><a href="../privacy.html">Confidentialité</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© <span data-current-year></span> Taoufik GASSEM — Tous droits réservés.</span><span>Technical Project Manager - Embedded Systems</span></div>
+  </div>
+</footer>
+<button class="back-to-top" aria-label="Retour en haut de page">↑</button>
+<script src="../js/main.js" defer></script>
+</body>
+</html>

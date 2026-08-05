@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Communication CAN et diagnostic ECU pour un chef de projet | Blog Taoufik Gassem</title>
+<meta name="description" content="Ce qu'un chef de projet doit comprendre du bus CAN et du diagnostic embarqué pour piloter un projet ECU.">
+<link rel="canonical" href="https://taoufikgassem.arena.site/blog/communication-can-diagnostic-ecu.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Communication CAN et diagnostic ECU : notions essentielles pour un chef de projet">
+<meta property="og:description" content="Ce qu'un chef de projet doit comprendre du bus CAN et du diagnostic embarqué pour piloter un projet ECU.">
+<meta property="og:image" content="https://taoufikgassem.arena.site/assets/images/taoufik-gassem-technical-project-manager.webp">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/responsive.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","headline":"Communication CAN et diagnostic ECU : notions essentielles pour un chef de projet","datePublished":"2025-04-23","dateModified":"2025-04-23","author":{"@type":"Person","name":"Taoufik GASSEM"},"image":"https://taoufikgassem.arena.site/assets/images/taoufik-gassem-technical-project-manager.webp","mainEntityOfPage":"https://taoufikgassem.arena.site/blog/communication-can-diagnostic-ecu.html"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://taoufikgassem.arena.site/index.html"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://taoufikgassem.arena.site/blog.html"},{"@type":"ListItem","position":3,"name":"Communication CAN et diagnostic","item":"https://taoufikgassem.arena.site/blog/communication-can-diagnostic-ecu.html"}]}
+</script>
+</head>
+<body data-page="blog">
+<a class="skip-link" href="#main-content">Aller au contenu principal</a>
+<div class="nav-backdrop"></div>
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="../index.html" class="logo" aria-label="Taoufik Gassem - Accueil"><span class="logo-mark" aria-hidden="true">TG</span><span class="logo-full">Taoufik GASSEM</span></a>
+    <nav class="main-nav" id="main-nav" aria-label="Navigation principale">
+      <ul>
+        <li><a href="../index.html">Accueil</a></li><li><a href="../about.html">À propos</a></li><li><a href="../experience.html">Expérience</a></li>
+        <li><a href="../expertise.html">Expertises</a></li><li><a href="../projects.html">Projets</a></li><li><a href="../certifications.html">Certifications</a></li>
+        <li><a href="../blog.html" aria-current="page">Blog</a></li><li><a href="../contact.html">Contact</a></li>
+      </ul>
+      <a href="../contact.html" class="btn btn-primary btn-block nav-cta-mobile">Me contacter</a>
+    </nav>
+    <div class="header-actions">
+      <a href="../contact.html" class="btn btn-primary btn-nav-cta">Me contacter</a>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="main-nav" aria-label="Ouvrir le menu de navigation"><span class="nav-toggle-icon"></span></button>
+    </div>
+  </div>
+</header>
+<div class="reading-progress"></div>
+<main id="main-content">
+  <section class="article-header">
+    <div class="container">
+      <ol class="breadcrumbs"><li><a href="../index.html">Accueil</a></li><li><a href="../blog.html">Blog</a></li><li>Communication CAN et diagnostic</li></ol>
+      <span class="tag">Systèmes embarqués</span>
+      <h1>Communication CAN et diagnostic ECU : notions essentielles pour un chef de projet</h1>
+      <div class="article-title-meta"><span>Par Taoufik Gassem</span><span>Publié le 23 avril 2025</span><span>Mis à jour le 23 avril 2025</span><span>8 min de lecture</span></div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container article-layout">
+      <nav class="article-toc" aria-label="Sommaire de l'article">
+        <h2>Sommaire</h2>
+        <ol>
+          <li><a href="#pourquoi-can">Pourquoi un chef de projet doit comprendre le CAN</a></li>
+          <li><a href="#can-notions">Notions de base du bus CAN</a></li>
+          <li><a href="#diagnostic">Le rôle du diagnostic embarqué</a></li>
+          <li><a href="#impact-pilotage">Impact sur le pilotage projet</a></li>
+          <li><a href="#checklist">Checklist de compréhension technique</a></li>
+          <li><a href="#conclusion">Conclusion</a></li>
+        </ol>
+      </nav>
+      <article class="article-body">
+        <p>Il n'est pas nécessaire d'être ingénieur réseau pour piloter un projet ECU, mais un chef de projet technique doit comprendre suffisamment le fonctionnement du bus CAN et du diagnostic embarqué pour dialoguer efficacement avec les équipes d'ingénierie et anticiper certains risques projet.</p>
+
+        <h2 id="pourquoi-can">Pourquoi un chef de projet doit comprendre le CAN</h2>
+        <p>Le bus CAN (Controller Area Network) est le principal moyen de communication entre calculateurs dans un véhicule automobile. Une grande partie des écarts d'intégration observés lors des campagnes de validation trouve son origine dans des incohérences de messagerie CAN entre calculateurs développés séparément.</p>
+
+        <h2 id="can-notions">Notions de base du bus CAN</h2>
+        <p>Le bus CAN transporte des messages échangés entre calculateurs selon un format standardisé, incluant des identifiants de message, des données utiles et des mécanismes de détection d'erreur. La spécification précise de cette messagerie (structure des trames, fréquence d'émission, gestion des priorités) doit être partagée et respectée par l'ensemble des calculateurs connectés au bus.</p>
+
+        <h2 id="diagnostic">Le rôle du diagnostic embarqué</h2>
+        <p>Le diagnostic embarqué permet de détecter, mémoriser et communiquer les anomalies de fonctionnement d'un calculateur, à des fins de maintenance ou de suivi en développement. Les spécifications de diagnostic définissent les codes d'anomalie possibles, leur criticité et les conditions de déclenchement associées.</p>
+        <h3>Diagnostic et validation</h3>
+        <p>Une partie des campagnes de validation d'un calculateur (validations HIL/PIE, environnement, diagnostic) vise précisément à vérifier que le diagnostic embarqué se comporte conformément aux spécifications, y compris dans des conditions dégradées simulées.</p>
+
+        <h2 id="impact-pilotage">Impact sur le pilotage projet</h2>
+        <p>Comprendre ces notions permet à un chef de projet de mieux évaluer la criticité réelle d'un écart signalé par les équipes techniques, de poser les bonnes questions lors des revues fournisseur, et d'anticiper les risques d'intégration liés à des incohérences de messagerie entre calculateurs.</p>
+
+        <h2 id="checklist">Checklist de compréhension technique minimale</h2>
+        <ul class="article-checklist">
+          <li>La structure générale de la messagerie CAN du projet est connue, au moins à un niveau synthétique.</li>
+          <li>Les principales spécifications de diagnostic sont identifiées et documentées.</li>
+          <li>Les écarts de communication CAN identifiés en intégration sont priorisés selon leur criticité réelle.</li>
+          <li>Le dialogue avec les équipes techniques s'appuie sur un vocabulaire commun.</li>
+        </ul>
+
+        <blockquote>Un chef de projet qui comprend les bases du CAN et du diagnostic pose de meilleures questions, plus tôt dans le projet.</blockquote>
+
+        <h2 id="conclusion">Conclusion</h2>
+        <p>La communication CAN et le diagnostic embarqué ne sont pas réservés aux ingénieurs techniques : leur compréhension, même à un niveau synthétique, renforce significativement la capacité d'un chef de projet à piloter un développement ECU avec discernement.</p>
+
+        <div class="article-cta"><p><strong>Vous pilotez un projet impliquant plusieurs calculateurs interconnectés ?</strong> <a href="../contact.html">Échangeons</a>.</p></div>
+
+        <div class="article-share">
+          <button class="btn btn-outline btn-sm" data-copy-link>Copier le lien de l'article</button>
+          <a class="btn btn-outline btn-sm" href="https://www.linkedin.com/sharing/share-offsite/?url=https://taoufikgassem.arena.site/blog/communication-can-diagnostic-ecu.html" target="_blank" rel="noopener noreferrer">Partager sur LinkedIn</a>
+        </div>
+
+        <nav class="article-nav" aria-label="Navigation entre articles">
+          <a href="article-15.html"><span class="nav-label">Article précédent</span>Intégration hardware et software dans un calculateur automobile</a>
+          <a href="article-17.html" class="next"><span class="nav-label">Article suivant</span>Comment construire une stratégie de validation pour un système embarqué</a>
+        </nav>
+
+        <div class="related-articles">
+          <h2>Articles liés</h2>
+          <div class="grid grid-3">
+            <div class="card"><h3><a href="article-26.html">CAPL pour la validation automobile</a></h3></div>
+            <div class="card"><h3><a href="article-02.html">Comment piloter un projet ECU de la spécification à l'intégration véhicule</a></h3></div>
+            <div class="card"><h3><a href="../projects.html#case-ecu">Étude de cas : pilotage ECU</a></h3></div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><h3>Taoufik GASSEM</h3><p>Technical Project Manager - Embedded Systems.</p><p><a href="https://www.linkedin.com/in/taoufik-g-387964129/" target="_blank" rel="noopener noreferrer">LinkedIn →</a></p></div>
+      <div class="footer-col"><h4>Navigation</h4><ul><li><a href="../index.html">Accueil</a></li><li><a href="../about.html">À propos</a></li><li><a href="../experience.html">Expérience</a></li></ul></div>
+      <div class="footer-col"><h4>Ressources</h4><ul><li><a href="../blog.html">Blog</a></li><li><a href="../contact.html">Contact</a></li><li><a href="../privacy.html">Confidentialité</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© <span data-current-year></span> Taoufik GASSEM — Tous droits réservés.</span><span>Technical Project Manager - Embedded Systems</span></div>
+  </div>
+</footer>
+<button class="back-to-top" aria-label="Retour en haut de page">↑</button>
+<script src="../js/main.js" defer></script>
+</body>
+</html>

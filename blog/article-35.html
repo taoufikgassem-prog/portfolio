@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Définir un modèle de priorité et de SLA dans ServiceNow | Blog Taoufik Gassem</title>
+<meta name="description" content="Comment construire un modèle de priorité cohérent et des SLA exploitables dans ServiceNow ITSM.">
+<link rel="canonical" href="https://taoufikgassem.arena.site/blog/modele-priorite-sla-servicenow.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Définir un modèle de priorité et de SLA dans ServiceNow">
+<meta property="og:description" content="Comment construire un modèle de priorité cohérent et des SLA exploitables dans ServiceNow ITSM.">
+<meta property="og:image" content="https://taoufikgassem.arena.site/assets/images/taoufik-gassem-technical-project-manager.webp">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/responsive.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","headline":"Définir un modèle de priorité et de SLA dans ServiceNow","datePublished":"2025-09-03","dateModified":"2025-09-03","author":{"@type":"Person","name":"Taoufik GASSEM"},"image":"https://taoufikgassem.arena.site/assets/images/taoufik-gassem-technical-project-manager.webp","mainEntityOfPage":"https://taoufikgassem.arena.site/blog/modele-priorite-sla-servicenow.html"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://taoufikgassem.arena.site/index.html"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://taoufikgassem.arena.site/blog.html"},{"@type":"ListItem","position":3,"name":"Priorité et SLA","item":"https://taoufikgassem.arena.site/blog/modele-priorite-sla-servicenow.html"}]}
+</script>
+</head>
+<body data-page="blog">
+<a class="skip-link" href="#main-content">Aller au contenu principal</a>
+<div class="nav-backdrop"></div>
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="../index.html" class="logo" aria-label="Taoufik Gassem - Accueil"><span class="logo-mark" aria-hidden="true">TG</span><span class="logo-full">Taoufik GASSEM</span></a>
+    <nav class="main-nav" id="main-nav" aria-label="Navigation principale">
+      <ul>
+        <li><a href="../index.html">Accueil</a></li><li><a href="../about.html">À propos</a></li><li><a href="../experience.html">Expérience</a></li>
+        <li><a href="../expertise.html">Expertises</a></li><li><a href="../projects.html">Projets</a></li><li><a href="../certifications.html">Certifications</a></li>
+        <li><a href="../blog.html" aria-current="page">Blog</a></li><li><a href="../contact.html">Contact</a></li>
+      </ul>
+      <a href="../contact.html" class="btn btn-primary btn-block nav-cta-mobile">Me contacter</a>
+    </nav>
+    <div class="header-actions">
+      <a href="../contact.html" class="btn btn-primary btn-nav-cta">Me contacter</a>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="main-nav" aria-label="Ouvrir le menu de navigation"><span class="nav-toggle-icon"></span></button>
+    </div>
+  </div>
+</header>
+<div class="reading-progress"></div>
+<main id="main-content">
+  <section class="article-header">
+    <div class="container">
+      <ol class="breadcrumbs"><li><a href="../index.html">Accueil</a></li><li><a href="../blog.html">Blog</a></li><li>Priorité et SLA</li></ol>
+      <span class="tag">ServiceNow</span>
+      <h1>Définir un modèle de priorité et de SLA dans ServiceNow</h1>
+      <div class="article-title-meta"><span>Par Taoufik Gassem</span><span>Publié le 3 septembre 2025</span><span>Mis à jour le 3 septembre 2025</span><span>8 min de lecture</span></div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container article-layout">
+      <nav class="article-toc" aria-label="Sommaire de l'article">
+        <h2>Sommaire</h2>
+        <ol>
+          <li><a href="#impact-urgence">Impact, urgence et priorité</a></li>
+          <li><a href="#matrice">Construire la matrice de priorité</a></li>
+          <li><a href="#sla">Les SLA dans ServiceNow</a></li>
+          <li><a href="#suivi-sla">Suivre le respect des SLA</a></li>
+          <li><a href="#checklist">Checklist priorité et SLA</a></li>
+          <li><a href="#conclusion">Conclusion</a></li>
+        </ol>
+      </nav>
+      <article class="article-body">
+        <p>La priorité d'un incident et les accords de niveau de service (SLA) associés déterminent le rythme auquel les équipes de support doivent réagir. Une configuration mal calibrée peut soit noyer les équipes sous de fausses urgences, soit retarder le traitement d'incidents réellement critiques.</p>
+
+        <h2 id="impact-urgence">Impact, urgence et priorité</h2>
+        <p>ServiceNow calcule généralement la priorité d'un incident à partir de deux dimensions : l'impact, qui mesure l'étendue des conséquences (un utilisateur, un service, toute l'organisation), et l'urgence, qui mesure la rapidité attendue de résolution. La combinaison de ces deux dimensions détermine la priorité finale.</p>
+
+        <h2 id="matrice">Construire la matrice de priorité</h2>
+        <p>La matrice de priorité associe chaque combinaison d'impact et d'urgence à un niveau de priorité. Cette matrice doit être définie avec soin : une priorité trop généreuse pour des cas mineurs dilue l'attention portée aux incidents réellement critiques.</p>
+
+        <h2 id="sla">Les SLA dans ServiceNow</h2>
+        <p>Les SLA (Service Level Agreements) définissent des délais cibles pour certaines étapes du traitement d'un incident, par exemple le délai de première réponse ou le délai de résolution. ServiceNow permet de configurer ces SLA avec des conditions de démarrage, de pause et d'arrêt, ainsi que des notifications d'alerte avant l'échéance.</p>
+        <h3>Gérer les pauses de SLA</h3>
+        <p>Certaines situations, comme la mise en attente d'un incident en raison d'une action requise du côté utilisateur, justifient une pause du SLA. Cette configuration doit être pensée avec rigueur pour éviter des SLA artificiellement respectés ou, à l'inverse, injustement dépassés.</p>
+
+        <h2 id="suivi-sla">Suivre le respect des SLA</h2>
+        <p>Le suivi du respect des SLA doit être visible pour les équipes de support et pour le management, à travers des rapports et tableaux de bord dédiés. Ce sujet est développé dans l'article <a href="article-45.html">Rapports et tableaux de bord dans ServiceNow</a>.</p>
+
+        <h2 id="checklist">Checklist priorité et SLA</h2>
+        <ul class="article-checklist">
+          <li>La matrice de priorité reflète les enjeux réels de l'organisation, pas uniquement une convention par défaut.</li>
+          <li>Les SLA sont configurés avec des conditions de pause claires et justifiées.</li>
+          <li>Des notifications d'alerte préviennent les équipes avant l'échéance d'un SLA critique.</li>
+          <li>Le respect des SLA est suivi via des rapports exploitables par le management.</li>
+        </ul>
+
+        <blockquote>Une matrice de priorité mal calibrée peut rendre urgent ce qui ne l'est pas, et inversement.</blockquote>
+
+        <h2 id="conclusion">Conclusion</h2>
+        <p>Un modèle de priorité et de SLA bien construit dans ServiceNow est essentiel pour garantir un traitement des incidents proportionné à leur criticité réelle. Cette configuration mérite une attention particulière, car elle influence directement la perception de la qualité du support par les utilisateurs.</p>
+
+        <div class="article-cta"><p><strong>Vous configurez un modèle de priorité ou des SLA ServiceNow ?</strong> <a href="../contact.html">Échangeons</a>.</p></div>
+
+        <div class="article-share">
+          <button class="btn btn-outline btn-sm" data-copy-link>Copier le lien de l'article</button>
+          <a class="btn btn-outline btn-sm" href="https://www.linkedin.com/sharing/share-offsite/?url=https://taoufikgassem.arena.site/blog/modele-priorite-sla-servicenow.html" target="_blank" rel="noopener noreferrer">Partager sur LinkedIn</a>
+        </div>
+
+        <nav class="article-nav" aria-label="Navigation entre articles">
+          <a href="article-34.html"><span class="nav-label">Article précédent</span>Comprendre le cycle de vie d'un incident ServiceNow</a>
+          <a href="article-36.html" class="next"><span class="nav-label">Article suivant</span>Notifications et règles d'affectation dans ServiceNow</a>
+        </nav>
+
+        <div class="related-articles">
+          <h2>Articles liés</h2>
+          <div class="grid grid-3">
+            <div class="card"><h3><a href="article-33.html">Configurer la gestion des incidents dans ServiceNow</a></h3></div>
+            <div class="card"><h3><a href="article-45.html">Rapports et tableaux de bord dans ServiceNow</a></h3></div>
+            <div class="card"><h3><a href="article-36.html">Notifications et règles d'affectation</a></h3></div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><h3>Taoufik GASSEM</h3><p>Technical Project Manager - Embedded Systems.</p><p><a href="https://www.linkedin.com/in/taoufik-g-387964129/" target="_blank" rel="noopener noreferrer">LinkedIn →</a></p></div>
+      <div class="footer-col"><h4>Navigation</h4><ul><li><a href="../index.html">Accueil</a></li><li><a href="../about.html">À propos</a></li><li><a href="../experience.html">Expérience</a></li></ul></div>
+      <div class="footer-col"><h4>Ressources</h4><ul><li><a href="../blog.html">Blog</a></li><li><a href="../contact.html">Contact</a></li><li><a href="../privacy.html">Confidentialité</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© <span data-current-year></span> Taoufik GASSEM — Tous droits réservés.</span><span>Technical Project Manager - Embedded Systems</span></div>
+  </div>
+</footer>
+<button class="back-to-top" aria-label="Retour en haut de page">↑</button>
+<script src="../js/main.js" defer></script>
+</body>
+</html>
